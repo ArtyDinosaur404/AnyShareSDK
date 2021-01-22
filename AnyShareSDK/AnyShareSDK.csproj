@@ -2,6 +2,15 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+    <Version>6.0.10.0</Version>
+    <PackageProjectUrl>https://github.com/ArtyDinosaur404/AnyShareSDK</PackageProjectUrl>
+    <Authors>ArtyDinosaur404</Authors>
+    <Company>OpenAPI</Company>
+    <Copyright>No Copyright</Copyright>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <RepositoryUrl>https://github.com/ArtyDinosaur404/AnyShareSDK</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <Description>AnyShareSDK，已修复官方SDK的异步Bug</Description>
   </PropertyGroup>
 
   <ItemGroup>
