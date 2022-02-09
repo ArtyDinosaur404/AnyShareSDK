@@ -1,5 +1,5 @@
 /* 
- * OpenDoc_API-文档访问
+ * 6.0-OpenDoc_API-文档访问
  *
  * API to access AnyShare    如有任何疑问，可到开发者社区提问：https://developers.aishu.cn  # Authentication  - 调用需要鉴权的API，必须将token放在HTTP header中：\"Authorization: Bearer ACCESS_TOKEN\"  - 对于GET请求，除了将token放在HTTP header中，也可以将token放在URL query string中：\"tokenid=ACCESS_TOKEN\"  
  *

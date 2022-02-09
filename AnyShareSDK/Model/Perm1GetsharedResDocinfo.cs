@@ -1,5 +1,5 @@
 /* 
- * OpenDoc_API-文档访问
+ * 6.0-OpenDoc_API-文档访问
  *
  * API to access AnyShare    如有任何疑问，可到开发者社区提问：https://developers.aishu.cn  # Authentication  - 调用需要鉴权的API，必须将token放在HTTP header中：\"Authorization: Bearer ACCESS_TOKEN\"  - 对于GET请求，除了将token放在HTTP header中，也可以将token放在URL query string中：\"tokenid=ACCESS_TOKEN\"  
  *
@@ -41,13 +41,15 @@ namespace AnyShareSDK.Model
         /// <param name="docid">文档id (required).</param>
         /// <param name="path">文档路径 (required).</param>
         /// <param name="size">文件大小，文件夹则为-1 (required).</param>
-        /// <param name="clientMtim">如果是文件，返回由客户端设置的文件本地修改时间；若未设置，返回modified的值 (required).</param>
-        public Perm1GetsharedResDocinfo(string docid = default(string), string path = default(string), long? size = default(long?), long? clientMtim = default(long?))
+        /// <param name="clientMtime">如果是文件，返回由客户端设置的文件本地修改时间；若未设置，返回modified的值 (required).</param>
+        /// <param name="accessorNames">访问者名称，存在多个访问者时用\&quot;,\&quot;进行分隔 (required).</param>
+        public Perm1GetsharedResDocinfo(string docid = default(string), string path = default(string), long? size = default(long?), long? clientMtime = default(long?), string accessorNames = default(string))
         {
             this.Docid = docid;
             this.Path = path;
             this.Size = size;
-            this.ClientMtim = clientMtim;
+            this.ClientMtime = clientMtime;
+            this.AccessorNames = accessorNames;
         }
         
         /// <summary>
@@ -75,8 +77,15 @@ namespace AnyShareSDK.Model
         /// 如果是文件，返回由客户端设置的文件本地修改时间；若未设置，返回modified的值
         /// </summary>
         /// <value>如果是文件，返回由客户端设置的文件本地修改时间；若未设置，返回modified的值</value>
-        [DataMember(Name="client_mtim", EmitDefaultValue=false)]
-        public long? ClientMtim { get; set; }
+        [DataMember(Name="client_mtime", EmitDefaultValue=false)]
+        public long? ClientMtime { get; set; }
+
+        /// <summary>
+        /// 访问者名称，存在多个访问者时用\&quot;,\&quot;进行分隔
+        /// </summary>
+        /// <value>访问者名称，存在多个访问者时用\&quot;,\&quot;进行分隔</value>
+        [DataMember(Name="accessor_names", EmitDefaultValue=false)]
+        public string AccessorNames { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -89,7 +98,8 @@ namespace AnyShareSDK.Model
             sb.Append("  Docid: ").Append(Docid).Append("\n");
             sb.Append("  Path: ").Append(Path).Append("\n");
             sb.Append("  Size: ").Append(Size).Append("\n");
-            sb.Append("  ClientMtim: ").Append(ClientMtim).Append("\n");
+            sb.Append("  ClientMtime: ").Append(ClientMtime).Append("\n");
+            sb.Append("  AccessorNames: ").Append(AccessorNames).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -140,9 +150,14 @@ namespace AnyShareSDK.Model
                     this.Size.Equals(input.Size))
                 ) && 
                 (
-                    this.ClientMtim == input.ClientMtim ||
-                    (this.ClientMtim != null &&
-                    this.ClientMtim.Equals(input.ClientMtim))
+                    this.ClientMtime == input.ClientMtime ||
+                    (this.ClientMtime != null &&
+                    this.ClientMtime.Equals(input.ClientMtime))
+                ) && 
+                (
+                    this.AccessorNames == input.AccessorNames ||
+                    (this.AccessorNames != null &&
+                    this.AccessorNames.Equals(input.AccessorNames))
                 );
         }
 
@@ -161,8 +176,10 @@ namespace AnyShareSDK.Model
                     hashCode = hashCode * 59 + this.Path.GetHashCode();
                 if (this.Size != null)
                     hashCode = hashCode * 59 + this.Size.GetHashCode();
-                if (this.ClientMtim != null)
-                    hashCode = hashCode * 59 + this.ClientMtim.GetHashCode();
+                if (this.ClientMtime != null)
+                    hashCode = hashCode * 59 + this.ClientMtime.GetHashCode();
+                if (this.AccessorNames != null)
+                    hashCode = hashCode * 59 + this.AccessorNames.GetHashCode();
                 return hashCode;
             }
         }

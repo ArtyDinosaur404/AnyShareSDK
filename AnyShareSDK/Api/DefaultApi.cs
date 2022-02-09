@@ -1,5 +1,5 @@
 /* 
- * OpenDoc_API-文档访问
+ * 6.0-OpenDoc_API-文档访问
  *
  * API to access AnyShare    如有任何疑问，可到开发者社区提问：https://developers.aishu.cn  # Authentication  - 调用需要鉴权的API，必须将token放在HTTP header中：\"Authorization: Bearer ACCESS_TOKEN\"  - 对于GET请求，除了将token放在HTTP header中，也可以将token放在URL query string中：\"tokenid=ACCESS_TOKEN\"  
  *
@@ -1158,6 +1158,27 @@ namespace AnyShareSDK.Api
         /// <returns>ApiResponse of ContactorSearchpersonsRes</returns>
         ApiResponse<ContactorSearchpersonsRes> ContactorSearchpersonsPostWithHttpInfo (ContactorSearchpersonsReq contactorSearchpersonsReq);
         /// <summary>
+        /// 获取部门基本信息
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="AnyShareSDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="departmentGetbasicinfoReq"></param>
+        /// <returns>DepartmentGetbasicinfoRes</returns>
+        DepartmentGetbasicinfoRes DepartmentGetbasicinfoPost (DepartmentGetbasicinfoReq departmentGetbasicinfoReq);
+
+        /// <summary>
+        /// 获取部门基本信息
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="AnyShareSDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="departmentGetbasicinfoReq"></param>
+        /// <returns>ApiResponse of DepartmentGetbasicinfoRes</returns>
+        ApiResponse<DepartmentGetbasicinfoRes> DepartmentGetbasicinfoPostWithHttpInfo (DepartmentGetbasicinfoReq departmentGetbasicinfoReq);
+        /// <summary>
         /// 获取用户所能访问的根部门信息
         /// </summary>
         /// <remarks>
@@ -1744,6 +1765,27 @@ namespace AnyShareSDK.Api
         /// <returns>ApiResponse of DirSizeRes</returns>
         ApiResponse<DirSizeRes> DirSizePostWithHttpInfo (DirSizeReq dirSizeReq);
         /// <summary>
+        /// 获取文件定密信息
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="AnyShareSDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="fileGetcsfinfoReq"></param>
+        /// <returns>FileGetcsfinfoRes</returns>
+        FileGetcsfinfoRes EfastV1FileGetcsfinfoPost (FileGetcsfinfoReq fileGetcsfinfoReq);
+
+        /// <summary>
+        /// 获取文件定密信息
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="AnyShareSDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="fileGetcsfinfoReq"></param>
+        /// <returns>ApiResponse of FileGetcsfinfoRes</returns>
+        ApiResponse<FileGetcsfinfoRes> EfastV1FileGetcsfinfoPostWithHttpInfo (FileGetcsfinfoReq fileGetcsfinfoReq);
+        /// <summary>
         /// 获取文档库
         /// </summary>
         /// <remarks>
@@ -2329,7 +2371,7 @@ namespace AnyShareSDK.Api
         /// 开始上传文件协议
         /// </summary>
         /// <remarks>
-        /// 1. 如果reqmethod为PUT，收到该请求后，客户端自行发送上传文件内容的请求到云存储平台，填入Authorization和Date，然后15分钟内发送PUT请求        Header包含：      &#x60;&#x60;&#x60;      “Authorization: AWS AKIAJEROARV2UTTADY6A:PkLXjvYrDGDVZgTD8WVbMmS33q4&#x3D;”      “Date: Tue, 07 Apr 2015 02:35:36 GMT”      “Content-Length: 42”      “Content-Type: application/octet-stream”      &#x60;&#x60;&#x60;        URL为：https://s3-ap-northeast-1.amazonaws.com/anyshares3accesstestbucket/21A9B9FD1B524CB49D54BF7399F82EB4/AAA6CBAFE45B4E4D884DC59805E60A5C            Body为：文件内容  2. 如果reqmethod为POST，收到该请求后，客户端自行设置发送上传文件内容的表单请求到云存储平台，填入各表单项，然后15分钟内发送POST请求。阿里云OSS和亚马逊S3要求file必须为表单中最后一个域。  
+        /// 1. 如果reqmethod为PUT，收到响应后，客户端自行发送上传文件http请求到对象存储，填入响应中authrequest字段包含的header，然后15分钟内发送PUT请求            示例：            URL：https://s3-ap-northeast-1.amazonaws.com/anyshares3accesstestbucket/21A9B9FD1B524CB49D54BF7399F82EB4/AAA6CBAFE45B4E4D884DC59805E60A5C            Header：      &#x60;&#x60;&#x60;      “Authorization: AWS AKIAJEROARV2UTTADY6A:PkLXjvYrDGDVZgTD8WVbMmS33q4&#x3D;”      “Date: Tue, 07 Apr 2015 02:35:36 GMT”      “Content-Length: 42”      “Content-Type: application/octet-stream”      &#x60;&#x60;&#x60;            Body：文件内容  2. 如果reqmethod为POST，收到响应后，客户端自行设置发送上传文件内容的表单请求到对象存储，填入各表单项，然后15分钟内发送POST请求。阿里云OSS和亚马逊S3要求file必须为表单中最后一个域。  
         /// </remarks>
         /// <exception cref="AnyShareSDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileOsbeginuploadReq"></param>
@@ -2340,7 +2382,7 @@ namespace AnyShareSDK.Api
         /// 开始上传文件协议
         /// </summary>
         /// <remarks>
-        /// 1. 如果reqmethod为PUT，收到该请求后，客户端自行发送上传文件内容的请求到云存储平台，填入Authorization和Date，然后15分钟内发送PUT请求        Header包含：      &#x60;&#x60;&#x60;      “Authorization: AWS AKIAJEROARV2UTTADY6A:PkLXjvYrDGDVZgTD8WVbMmS33q4&#x3D;”      “Date: Tue, 07 Apr 2015 02:35:36 GMT”      “Content-Length: 42”      “Content-Type: application/octet-stream”      &#x60;&#x60;&#x60;        URL为：https://s3-ap-northeast-1.amazonaws.com/anyshares3accesstestbucket/21A9B9FD1B524CB49D54BF7399F82EB4/AAA6CBAFE45B4E4D884DC59805E60A5C            Body为：文件内容  2. 如果reqmethod为POST，收到该请求后，客户端自行设置发送上传文件内容的表单请求到云存储平台，填入各表单项，然后15分钟内发送POST请求。阿里云OSS和亚马逊S3要求file必须为表单中最后一个域。  
+        /// 1. 如果reqmethod为PUT，收到响应后，客户端自行发送上传文件http请求到对象存储，填入响应中authrequest字段包含的header，然后15分钟内发送PUT请求            示例：            URL：https://s3-ap-northeast-1.amazonaws.com/anyshares3accesstestbucket/21A9B9FD1B524CB49D54BF7399F82EB4/AAA6CBAFE45B4E4D884DC59805E60A5C            Header：      &#x60;&#x60;&#x60;      “Authorization: AWS AKIAJEROARV2UTTADY6A:PkLXjvYrDGDVZgTD8WVbMmS33q4&#x3D;”      “Date: Tue, 07 Apr 2015 02:35:36 GMT”      “Content-Length: 42”      “Content-Type: application/octet-stream”      &#x60;&#x60;&#x60;            Body：文件内容  2. 如果reqmethod为POST，收到响应后，客户端自行设置发送上传文件内容的表单请求到对象存储，填入各表单项，然后15分钟内发送POST请求。阿里云OSS和亚马逊S3要求file必须为表单中最后一个域。  
         /// </remarks>
         /// <exception cref="AnyShareSDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileOsbeginuploadReq"></param>
@@ -2453,7 +2495,7 @@ namespace AnyShareSDK.Api
         /// 上传大文件的分块协议
         /// </summary>
         /// <remarks>
-        /// 1. 收到该响应后，客户端自行发送文件分片内容的请求到云存储平台。  2. 客户端在请求Header中填入Authorization和Date，15分钟内发送PUT请求        Header包含：      &#x60;&#x60;&#x60;      “Authorization: AWS AKIAJEROARV2UTTADY6A:PkLXjvYrDGDVZgTD8WVbMmS33q4&#x3D;”      “Date: Tue, 07 Apr 2015 02:35:36 GMT”      “Content-Length: 42”      &#x60;&#x60;&#x60;      URL为：https://s3-ap-northeast-1.amazonaws.com/anyshares3accesstestbucket/21A9B9FD1B524CB49D54BF7399F82EB4/AAA6CBAFE45B4E4D884DC59805E60A5C?partNumber&#x3D;1&amp;uploadId&#x3D;0004B9895DBBB6EC98E36            Body为：分片内容  3. 对象存储返回响应信息时，响应header中可能包含Etag值，用于标识所上传对象分片。如果存在key为ETag/ETAG/etag/Etag等值的header，需要取得其对应的值，作为完成大文件分块上传协议oscompleteupload的传参，见参数partetag及请求示例。            需注意，不同对象存储返回的Etag的header，key大小写可能不同，可能为ETag/ETAG/etag/Etag等。可以对响应header进行遍历，对每个key转为小写，和字符串“etag”对比，获取对应的值。一个可能的响应header示例为：Etag: ce1c8d1c3900c64feaa651052d75acd9    4. 亚马逊S3限定分块大小不能小于5MB，七牛存储限定分块大小为4M的倍数。见“对象存储选项值协议”说明
+        /// 1. 收到该响应后，客户端自行发送文件分片内容的请求到对象存储。  2. 客户端在请求Header中填入authrequests中的header，15分钟内发送PUT请求        示例：        URL：https://s3-ap-northeast-1.amazonaws.com/anyshares3accesstestbucket/21A9B9FD1B524CB49D54BF7399F82EB4/AAA6CBAFE45B4E4D884DC59805E60A5C?partNumber&#x3D;1&amp;uploadId&#x3D;0004B9895DBBB6EC98E36            Header：      &#x60;&#x60;&#x60;      “Authorization: AWS AKIAJEROARV2UTTADY6A:PkLXjvYrDGDVZgTD8WVbMmS33q4&#x3D;”      “Date: Tue, 07 Apr 2015 02:35:36 GMT”      “Content-Length: 42”      &#x60;&#x60;&#x60;            Body：分片内容  3. 对象存储返回响应信息时，响应header中可能包含Etag值，用于标识所上传对象分片。如果存在key为ETag/ETAG/etag/Etag等值的header，需要取得其对应的值，作为完成大文件分块上传协议oscompleteupload的传参，见参数partetag及请求示例。            需注意，不同对象存储返回的Etag的header，key大小写可能不同，可能为ETag/ETAG/etag/Etag等。可以对响应header进行遍历，对每个key转为小写，和字符串“etag”对比，获取对应的值。一个可能的响应header示例为：Etag: ce1c8d1c3900c64feaa651052d75acd9    4. 亚马逊S3限定分块大小不能小于5MB，七牛存储限定分块大小为4M的倍数。见“对象存储选项值协议”说明
         /// </remarks>
         /// <exception cref="AnyShareSDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileOsuploadpartReq"></param>
@@ -2464,7 +2506,7 @@ namespace AnyShareSDK.Api
         /// 上传大文件的分块协议
         /// </summary>
         /// <remarks>
-        /// 1. 收到该响应后，客户端自行发送文件分片内容的请求到云存储平台。  2. 客户端在请求Header中填入Authorization和Date，15分钟内发送PUT请求        Header包含：      &#x60;&#x60;&#x60;      “Authorization: AWS AKIAJEROARV2UTTADY6A:PkLXjvYrDGDVZgTD8WVbMmS33q4&#x3D;”      “Date: Tue, 07 Apr 2015 02:35:36 GMT”      “Content-Length: 42”      &#x60;&#x60;&#x60;      URL为：https://s3-ap-northeast-1.amazonaws.com/anyshares3accesstestbucket/21A9B9FD1B524CB49D54BF7399F82EB4/AAA6CBAFE45B4E4D884DC59805E60A5C?partNumber&#x3D;1&amp;uploadId&#x3D;0004B9895DBBB6EC98E36            Body为：分片内容  3. 对象存储返回响应信息时，响应header中可能包含Etag值，用于标识所上传对象分片。如果存在key为ETag/ETAG/etag/Etag等值的header，需要取得其对应的值，作为完成大文件分块上传协议oscompleteupload的传参，见参数partetag及请求示例。            需注意，不同对象存储返回的Etag的header，key大小写可能不同，可能为ETag/ETAG/etag/Etag等。可以对响应header进行遍历，对每个key转为小写，和字符串“etag”对比，获取对应的值。一个可能的响应header示例为：Etag: ce1c8d1c3900c64feaa651052d75acd9    4. 亚马逊S3限定分块大小不能小于5MB，七牛存储限定分块大小为4M的倍数。见“对象存储选项值协议”说明
+        /// 1. 收到该响应后，客户端自行发送文件分片内容的请求到对象存储。  2. 客户端在请求Header中填入authrequests中的header，15分钟内发送PUT请求        示例：        URL：https://s3-ap-northeast-1.amazonaws.com/anyshares3accesstestbucket/21A9B9FD1B524CB49D54BF7399F82EB4/AAA6CBAFE45B4E4D884DC59805E60A5C?partNumber&#x3D;1&amp;uploadId&#x3D;0004B9895DBBB6EC98E36            Header：      &#x60;&#x60;&#x60;      “Authorization: AWS AKIAJEROARV2UTTADY6A:PkLXjvYrDGDVZgTD8WVbMmS33q4&#x3D;”      “Date: Tue, 07 Apr 2015 02:35:36 GMT”      “Content-Length: 42”      &#x60;&#x60;&#x60;            Body：分片内容  3. 对象存储返回响应信息时，响应header中可能包含Etag值，用于标识所上传对象分片。如果存在key为ETag/ETAG/etag/Etag等值的header，需要取得其对应的值，作为完成大文件分块上传协议oscompleteupload的传参，见参数partetag及请求示例。            需注意，不同对象存储返回的Etag的header，key大小写可能不同，可能为ETag/ETAG/etag/Etag等。可以对响应header进行遍历，对每个key转为小写，和字符串“etag”对比，获取对应的值。一个可能的响应header示例为：Etag: ce1c8d1c3900c64feaa651052d75acd9    4. 亚马逊S3限定分块大小不能小于5MB，七牛存储限定分块大小为4M的倍数。见“对象存储选项值协议”说明
         /// </remarks>
         /// <exception cref="AnyShareSDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileOsuploadpartReq"></param>
@@ -3181,6 +3223,27 @@ namespace AnyShareSDK.Api
         /// <param name="linkCheckpermReq"></param>
         /// <returns>ApiResponse of LinkCheckpermRes</returns>
         ApiResponse<LinkCheckpermRes> LinkCheckpermPostWithHttpInfo (LinkCheckpermReq linkCheckpermReq);
+        /// <summary>
+        /// 检查是否需要水印
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="AnyShareSDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="linkcheckwatermarkreq"></param>
+        /// <returns>DirCheckwatermarkRes</returns>
+        DirCheckwatermarkRes LinkCheckwatermarkPost (Linkcheckwatermarkreq linkcheckwatermarkreq);
+
+        /// <summary>
+        /// 检查是否需要水印
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="AnyShareSDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="linkcheckwatermarkreq"></param>
+        /// <returns>ApiResponse of DirCheckwatermarkRes</returns>
+        ApiResponse<DirCheckwatermarkRes> LinkCheckwatermarkPostWithHttpInfo (Linkcheckwatermarkreq linkcheckwatermarkreq);
         /// <summary>
         /// 关闭外链
         /// </summary>
@@ -4014,8 +4077,8 @@ namespace AnyShareSDK.Api
         /// </remarks>
         /// <exception cref="AnyShareSDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="quarantineListreversionReq"></param>
-        /// <returns>QuarantineListreversionRes</returns>
-        QuarantineListreversionRes QuarantineListreversionPost (QuarantineListreversionReq quarantineListreversionReq);
+        /// <returns>List&lt;QuarantineListreversionRes&gt;</returns>
+        List<QuarantineListreversionRes> QuarantineListreversionPost (QuarantineListreversionReq quarantineListreversionReq);
 
         /// <summary>
         /// 获取版本协议
@@ -4025,8 +4088,8 @@ namespace AnyShareSDK.Api
         /// </remarks>
         /// <exception cref="AnyShareSDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="quarantineListreversionReq"></param>
-        /// <returns>ApiResponse of QuarantineListreversionRes</returns>
-        ApiResponse<QuarantineListreversionRes> QuarantineListreversionPostWithHttpInfo (QuarantineListreversionReq quarantineListreversionReq);
+        /// <returns>ApiResponse of List&lt;QuarantineListreversionRes&gt;</returns>
+        ApiResponse<List<QuarantineListreversionRes>> QuarantineListreversionPostWithHttpInfo (QuarantineListreversionReq quarantineListreversionReq);
         /// <summary>
         /// 获取版本协议
         /// </summary>
@@ -4334,6 +4397,27 @@ namespace AnyShareSDK.Api
         /// <exception cref="AnyShareSDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of UserGetRes</returns>
         ApiResponse<UserGetRes> UserGetPostWithHttpInfo ();
+        /// <summary>
+        /// 获取用户基本信息
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="AnyShareSDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userGetbasicinfoReq"></param>
+        /// <returns>UserGetbasicinfoRes</returns>
+        UserGetbasicinfoRes UserGetbasicinfoPost (UserGetbasicinfoReq userGetbasicinfoReq);
+
+        /// <summary>
+        /// 获取用户基本信息
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="AnyShareSDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userGetbasicinfoReq"></param>
+        /// <returns>ApiResponse of UserGetbasicinfoRes</returns>
+        ApiResponse<UserGetbasicinfoRes> UserGetbasicinfoPostWithHttpInfo (UserGetbasicinfoReq userGetbasicinfoReq);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -5470,6 +5554,27 @@ namespace AnyShareSDK.Api
         /// <returns>Task of ApiResponse (ContactorSearchpersonsRes)</returns>
         System.Threading.Tasks.Task<ApiResponse<ContactorSearchpersonsRes>> ContactorSearchpersonsPostAsyncWithHttpInfo (ContactorSearchpersonsReq contactorSearchpersonsReq);
         /// <summary>
+        /// 获取部门基本信息
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="AnyShareSDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="departmentGetbasicinfoReq"></param>
+        /// <returns>Task of DepartmentGetbasicinfoRes</returns>
+        System.Threading.Tasks.Task<DepartmentGetbasicinfoRes> DepartmentGetbasicinfoPostAsync (DepartmentGetbasicinfoReq departmentGetbasicinfoReq);
+
+        /// <summary>
+        /// 获取部门基本信息
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="AnyShareSDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="departmentGetbasicinfoReq"></param>
+        /// <returns>Task of ApiResponse (DepartmentGetbasicinfoRes)</returns>
+        System.Threading.Tasks.Task<ApiResponse<DepartmentGetbasicinfoRes>> DepartmentGetbasicinfoPostAsyncWithHttpInfo (DepartmentGetbasicinfoReq departmentGetbasicinfoReq);
+        /// <summary>
         /// 获取用户所能访问的根部门信息
         /// </summary>
         /// <remarks>
@@ -6056,6 +6161,27 @@ namespace AnyShareSDK.Api
         /// <returns>Task of ApiResponse (DirSizeRes)</returns>
         System.Threading.Tasks.Task<ApiResponse<DirSizeRes>> DirSizePostAsyncWithHttpInfo (DirSizeReq dirSizeReq);
         /// <summary>
+        /// 获取文件定密信息
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="AnyShareSDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="fileGetcsfinfoReq"></param>
+        /// <returns>Task of FileGetcsfinfoRes</returns>
+        System.Threading.Tasks.Task<FileGetcsfinfoRes> EfastV1FileGetcsfinfoPostAsync (FileGetcsfinfoReq fileGetcsfinfoReq);
+
+        /// <summary>
+        /// 获取文件定密信息
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="AnyShareSDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="fileGetcsfinfoReq"></param>
+        /// <returns>Task of ApiResponse (FileGetcsfinfoRes)</returns>
+        System.Threading.Tasks.Task<ApiResponse<FileGetcsfinfoRes>> EfastV1FileGetcsfinfoPostAsyncWithHttpInfo (FileGetcsfinfoReq fileGetcsfinfoReq);
+        /// <summary>
         /// 获取文档库
         /// </summary>
         /// <remarks>
@@ -6641,7 +6767,7 @@ namespace AnyShareSDK.Api
         /// 开始上传文件协议
         /// </summary>
         /// <remarks>
-        /// 1. 如果reqmethod为PUT，收到该请求后，客户端自行发送上传文件内容的请求到云存储平台，填入Authorization和Date，然后15分钟内发送PUT请求        Header包含：      &#x60;&#x60;&#x60;      “Authorization: AWS AKIAJEROARV2UTTADY6A:PkLXjvYrDGDVZgTD8WVbMmS33q4&#x3D;”      “Date: Tue, 07 Apr 2015 02:35:36 GMT”      “Content-Length: 42”      “Content-Type: application/octet-stream”      &#x60;&#x60;&#x60;        URL为：https://s3-ap-northeast-1.amazonaws.com/anyshares3accesstestbucket/21A9B9FD1B524CB49D54BF7399F82EB4/AAA6CBAFE45B4E4D884DC59805E60A5C            Body为：文件内容  2. 如果reqmethod为POST，收到该请求后，客户端自行设置发送上传文件内容的表单请求到云存储平台，填入各表单项，然后15分钟内发送POST请求。阿里云OSS和亚马逊S3要求file必须为表单中最后一个域。  
+        /// 1. 如果reqmethod为PUT，收到响应后，客户端自行发送上传文件http请求到对象存储，填入响应中authrequest字段包含的header，然后15分钟内发送PUT请求            示例：            URL：https://s3-ap-northeast-1.amazonaws.com/anyshares3accesstestbucket/21A9B9FD1B524CB49D54BF7399F82EB4/AAA6CBAFE45B4E4D884DC59805E60A5C            Header：      &#x60;&#x60;&#x60;      “Authorization: AWS AKIAJEROARV2UTTADY6A:PkLXjvYrDGDVZgTD8WVbMmS33q4&#x3D;”      “Date: Tue, 07 Apr 2015 02:35:36 GMT”      “Content-Length: 42”      “Content-Type: application/octet-stream”      &#x60;&#x60;&#x60;            Body：文件内容  2. 如果reqmethod为POST，收到响应后，客户端自行设置发送上传文件内容的表单请求到对象存储，填入各表单项，然后15分钟内发送POST请求。阿里云OSS和亚马逊S3要求file必须为表单中最后一个域。  
         /// </remarks>
         /// <exception cref="AnyShareSDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileOsbeginuploadReq"></param>
@@ -6652,7 +6778,7 @@ namespace AnyShareSDK.Api
         /// 开始上传文件协议
         /// </summary>
         /// <remarks>
-        /// 1. 如果reqmethod为PUT，收到该请求后，客户端自行发送上传文件内容的请求到云存储平台，填入Authorization和Date，然后15分钟内发送PUT请求        Header包含：      &#x60;&#x60;&#x60;      “Authorization: AWS AKIAJEROARV2UTTADY6A:PkLXjvYrDGDVZgTD8WVbMmS33q4&#x3D;”      “Date: Tue, 07 Apr 2015 02:35:36 GMT”      “Content-Length: 42”      “Content-Type: application/octet-stream”      &#x60;&#x60;&#x60;        URL为：https://s3-ap-northeast-1.amazonaws.com/anyshares3accesstestbucket/21A9B9FD1B524CB49D54BF7399F82EB4/AAA6CBAFE45B4E4D884DC59805E60A5C            Body为：文件内容  2. 如果reqmethod为POST，收到该请求后，客户端自行设置发送上传文件内容的表单请求到云存储平台，填入各表单项，然后15分钟内发送POST请求。阿里云OSS和亚马逊S3要求file必须为表单中最后一个域。  
+        /// 1. 如果reqmethod为PUT，收到响应后，客户端自行发送上传文件http请求到对象存储，填入响应中authrequest字段包含的header，然后15分钟内发送PUT请求            示例：            URL：https://s3-ap-northeast-1.amazonaws.com/anyshares3accesstestbucket/21A9B9FD1B524CB49D54BF7399F82EB4/AAA6CBAFE45B4E4D884DC59805E60A5C            Header：      &#x60;&#x60;&#x60;      “Authorization: AWS AKIAJEROARV2UTTADY6A:PkLXjvYrDGDVZgTD8WVbMmS33q4&#x3D;”      “Date: Tue, 07 Apr 2015 02:35:36 GMT”      “Content-Length: 42”      “Content-Type: application/octet-stream”      &#x60;&#x60;&#x60;            Body：文件内容  2. 如果reqmethod为POST，收到响应后，客户端自行设置发送上传文件内容的表单请求到对象存储，填入各表单项，然后15分钟内发送POST请求。阿里云OSS和亚马逊S3要求file必须为表单中最后一个域。  
         /// </remarks>
         /// <exception cref="AnyShareSDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileOsbeginuploadReq"></param>
@@ -6765,7 +6891,7 @@ namespace AnyShareSDK.Api
         /// 上传大文件的分块协议
         /// </summary>
         /// <remarks>
-        /// 1. 收到该响应后，客户端自行发送文件分片内容的请求到云存储平台。  2. 客户端在请求Header中填入Authorization和Date，15分钟内发送PUT请求        Header包含：      &#x60;&#x60;&#x60;      “Authorization: AWS AKIAJEROARV2UTTADY6A:PkLXjvYrDGDVZgTD8WVbMmS33q4&#x3D;”      “Date: Tue, 07 Apr 2015 02:35:36 GMT”      “Content-Length: 42”      &#x60;&#x60;&#x60;      URL为：https://s3-ap-northeast-1.amazonaws.com/anyshares3accesstestbucket/21A9B9FD1B524CB49D54BF7399F82EB4/AAA6CBAFE45B4E4D884DC59805E60A5C?partNumber&#x3D;1&amp;uploadId&#x3D;0004B9895DBBB6EC98E36            Body为：分片内容  3. 对象存储返回响应信息时，响应header中可能包含Etag值，用于标识所上传对象分片。如果存在key为ETag/ETAG/etag/Etag等值的header，需要取得其对应的值，作为完成大文件分块上传协议oscompleteupload的传参，见参数partetag及请求示例。            需注意，不同对象存储返回的Etag的header，key大小写可能不同，可能为ETag/ETAG/etag/Etag等。可以对响应header进行遍历，对每个key转为小写，和字符串“etag”对比，获取对应的值。一个可能的响应header示例为：Etag: ce1c8d1c3900c64feaa651052d75acd9    4. 亚马逊S3限定分块大小不能小于5MB，七牛存储限定分块大小为4M的倍数。见“对象存储选项值协议”说明
+        /// 1. 收到该响应后，客户端自行发送文件分片内容的请求到对象存储。  2. 客户端在请求Header中填入authrequests中的header，15分钟内发送PUT请求        示例：        URL：https://s3-ap-northeast-1.amazonaws.com/anyshares3accesstestbucket/21A9B9FD1B524CB49D54BF7399F82EB4/AAA6CBAFE45B4E4D884DC59805E60A5C?partNumber&#x3D;1&amp;uploadId&#x3D;0004B9895DBBB6EC98E36            Header：      &#x60;&#x60;&#x60;      “Authorization: AWS AKIAJEROARV2UTTADY6A:PkLXjvYrDGDVZgTD8WVbMmS33q4&#x3D;”      “Date: Tue, 07 Apr 2015 02:35:36 GMT”      “Content-Length: 42”      &#x60;&#x60;&#x60;            Body：分片内容  3. 对象存储返回响应信息时，响应header中可能包含Etag值，用于标识所上传对象分片。如果存在key为ETag/ETAG/etag/Etag等值的header，需要取得其对应的值，作为完成大文件分块上传协议oscompleteupload的传参，见参数partetag及请求示例。            需注意，不同对象存储返回的Etag的header，key大小写可能不同，可能为ETag/ETAG/etag/Etag等。可以对响应header进行遍历，对每个key转为小写，和字符串“etag”对比，获取对应的值。一个可能的响应header示例为：Etag: ce1c8d1c3900c64feaa651052d75acd9    4. 亚马逊S3限定分块大小不能小于5MB，七牛存储限定分块大小为4M的倍数。见“对象存储选项值协议”说明
         /// </remarks>
         /// <exception cref="AnyShareSDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileOsuploadpartReq"></param>
@@ -6776,7 +6902,7 @@ namespace AnyShareSDK.Api
         /// 上传大文件的分块协议
         /// </summary>
         /// <remarks>
-        /// 1. 收到该响应后，客户端自行发送文件分片内容的请求到云存储平台。  2. 客户端在请求Header中填入Authorization和Date，15分钟内发送PUT请求        Header包含：      &#x60;&#x60;&#x60;      “Authorization: AWS AKIAJEROARV2UTTADY6A:PkLXjvYrDGDVZgTD8WVbMmS33q4&#x3D;”      “Date: Tue, 07 Apr 2015 02:35:36 GMT”      “Content-Length: 42”      &#x60;&#x60;&#x60;      URL为：https://s3-ap-northeast-1.amazonaws.com/anyshares3accesstestbucket/21A9B9FD1B524CB49D54BF7399F82EB4/AAA6CBAFE45B4E4D884DC59805E60A5C?partNumber&#x3D;1&amp;uploadId&#x3D;0004B9895DBBB6EC98E36            Body为：分片内容  3. 对象存储返回响应信息时，响应header中可能包含Etag值，用于标识所上传对象分片。如果存在key为ETag/ETAG/etag/Etag等值的header，需要取得其对应的值，作为完成大文件分块上传协议oscompleteupload的传参，见参数partetag及请求示例。            需注意，不同对象存储返回的Etag的header，key大小写可能不同，可能为ETag/ETAG/etag/Etag等。可以对响应header进行遍历，对每个key转为小写，和字符串“etag”对比，获取对应的值。一个可能的响应header示例为：Etag: ce1c8d1c3900c64feaa651052d75acd9    4. 亚马逊S3限定分块大小不能小于5MB，七牛存储限定分块大小为4M的倍数。见“对象存储选项值协议”说明
+        /// 1. 收到该响应后，客户端自行发送文件分片内容的请求到对象存储。  2. 客户端在请求Header中填入authrequests中的header，15分钟内发送PUT请求        示例：        URL：https://s3-ap-northeast-1.amazonaws.com/anyshares3accesstestbucket/21A9B9FD1B524CB49D54BF7399F82EB4/AAA6CBAFE45B4E4D884DC59805E60A5C?partNumber&#x3D;1&amp;uploadId&#x3D;0004B9895DBBB6EC98E36            Header：      &#x60;&#x60;&#x60;      “Authorization: AWS AKIAJEROARV2UTTADY6A:PkLXjvYrDGDVZgTD8WVbMmS33q4&#x3D;”      “Date: Tue, 07 Apr 2015 02:35:36 GMT”      “Content-Length: 42”      &#x60;&#x60;&#x60;            Body：分片内容  3. 对象存储返回响应信息时，响应header中可能包含Etag值，用于标识所上传对象分片。如果存在key为ETag/ETAG/etag/Etag等值的header，需要取得其对应的值，作为完成大文件分块上传协议oscompleteupload的传参，见参数partetag及请求示例。            需注意，不同对象存储返回的Etag的header，key大小写可能不同，可能为ETag/ETAG/etag/Etag等。可以对响应header进行遍历，对每个key转为小写，和字符串“etag”对比，获取对应的值。一个可能的响应header示例为：Etag: ce1c8d1c3900c64feaa651052d75acd9    4. 亚马逊S3限定分块大小不能小于5MB，七牛存储限定分块大小为4M的倍数。见“对象存储选项值协议”说明
         /// </remarks>
         /// <exception cref="AnyShareSDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileOsuploadpartReq"></param>
@@ -7493,6 +7619,27 @@ namespace AnyShareSDK.Api
         /// <param name="linkCheckpermReq"></param>
         /// <returns>Task of ApiResponse (LinkCheckpermRes)</returns>
         System.Threading.Tasks.Task<ApiResponse<LinkCheckpermRes>> LinkCheckpermPostAsyncWithHttpInfo (LinkCheckpermReq linkCheckpermReq);
+        /// <summary>
+        /// 检查是否需要水印
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="AnyShareSDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="linkcheckwatermarkreq"></param>
+        /// <returns>Task of DirCheckwatermarkRes</returns>
+        System.Threading.Tasks.Task<DirCheckwatermarkRes> LinkCheckwatermarkPostAsync (Linkcheckwatermarkreq linkcheckwatermarkreq);
+
+        /// <summary>
+        /// 检查是否需要水印
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="AnyShareSDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="linkcheckwatermarkreq"></param>
+        /// <returns>Task of ApiResponse (DirCheckwatermarkRes)</returns>
+        System.Threading.Tasks.Task<ApiResponse<DirCheckwatermarkRes>> LinkCheckwatermarkPostAsyncWithHttpInfo (Linkcheckwatermarkreq linkcheckwatermarkreq);
         /// <summary>
         /// 关闭外链
         /// </summary>
@@ -8326,8 +8473,8 @@ namespace AnyShareSDK.Api
         /// </remarks>
         /// <exception cref="AnyShareSDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="quarantineListreversionReq"></param>
-        /// <returns>Task of QuarantineListreversionRes</returns>
-        System.Threading.Tasks.Task<QuarantineListreversionRes> QuarantineListreversionPostAsync (QuarantineListreversionReq quarantineListreversionReq);
+        /// <returns>Task of List&lt;QuarantineListreversionRes&gt;</returns>
+        System.Threading.Tasks.Task<List<QuarantineListreversionRes>> QuarantineListreversionPostAsync (QuarantineListreversionReq quarantineListreversionReq);
 
         /// <summary>
         /// 获取版本协议
@@ -8337,8 +8484,8 @@ namespace AnyShareSDK.Api
         /// </remarks>
         /// <exception cref="AnyShareSDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="quarantineListreversionReq"></param>
-        /// <returns>Task of ApiResponse (QuarantineListreversionRes)</returns>
-        System.Threading.Tasks.Task<ApiResponse<QuarantineListreversionRes>> QuarantineListreversionPostAsyncWithHttpInfo (QuarantineListreversionReq quarantineListreversionReq);
+        /// <returns>Task of ApiResponse (List&lt;QuarantineListreversionRes&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<QuarantineListreversionRes>>> QuarantineListreversionPostAsyncWithHttpInfo (QuarantineListreversionReq quarantineListreversionReq);
         /// <summary>
         /// 获取版本协议
         /// </summary>
@@ -8646,7 +8793,27 @@ namespace AnyShareSDK.Api
         /// <exception cref="AnyShareSDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (UserGetRes)</returns>
         System.Threading.Tasks.Task<ApiResponse<UserGetRes>> UserGetPostAsyncWithHttpInfo ();
+        /// <summary>
+        /// 获取用户基本信息
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="AnyShareSDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userGetbasicinfoReq"></param>
+        /// <returns>Task of UserGetbasicinfoRes</returns>
+        System.Threading.Tasks.Task<UserGetbasicinfoRes> UserGetbasicinfoPostAsync (UserGetbasicinfoReq userGetbasicinfoReq);
 
+        /// <summary>
+        /// 获取用户基本信息
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="AnyShareSDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userGetbasicinfoReq"></param>
+        /// <returns>Task of ApiResponse (UserGetbasicinfoRes)</returns>
+        System.Threading.Tasks.Task<ApiResponse<UserGetbasicinfoRes>> UserGetbasicinfoPostAsyncWithHttpInfo (UserGetbasicinfoReq userGetbasicinfoReq);
         #endregion Asynchronous Operations
     }
 
@@ -8894,13 +9061,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = auditApproveReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -9061,13 +9221,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = auditApprovedocReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -9230,13 +9383,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = auditGetapplyhistoryReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -9369,13 +9515,6 @@ namespace AnyShareSDK.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -9538,13 +9677,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = auditGetapplysReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -9706,13 +9838,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = auditGetapprovehistoryReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -9845,13 +9970,6 @@ namespace AnyShareSDK.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -9986,13 +10104,6 @@ namespace AnyShareSDK.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -10126,13 +10237,6 @@ namespace AnyShareSDK.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -10265,13 +10369,6 @@ namespace AnyShareSDK.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -10434,13 +10531,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = auditGetpendingapprovalsReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -10573,13 +10663,6 @@ namespace AnyShareSDK.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -10742,13 +10825,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = auditGetpendingapprovalsReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -10881,13 +10957,6 @@ namespace AnyShareSDK.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -11050,13 +11119,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = auditGetshareapprovehistoryReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -11189,13 +11251,6 @@ namespace AnyShareSDK.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -11358,13 +11413,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = auditPublishdocReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -11525,13 +11573,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = auth1CheckuninstallpwdReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -11694,13 +11735,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = auth1ExtloginclientReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -11861,13 +11895,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = auth1GetbyadsessionReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -12030,13 +12057,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = auth1GetbythirdpartyReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -12198,13 +12218,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = auth1GetbyticketReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -12337,13 +12350,6 @@ namespace AnyShareSDK.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -12506,13 +12512,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = auth1GetextappinfoReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -12674,13 +12673,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = auth1GetnewReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -12813,13 +12805,6 @@ namespace AnyShareSDK.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -12982,13 +12967,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = auth1GetvcodeReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -13147,13 +13125,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = auth1LogoutReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -13320,13 +13291,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = auth1ModifypasswordReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -13488,13 +13452,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = auth1RefreshtokenReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -13653,13 +13610,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = auth1RevoketokenReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -13822,13 +13772,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = auth1SelfregistrationReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -13989,13 +13932,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = auth1SendauthvcodeReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -14158,13 +14094,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = auth1ValidatesecuritydeviceReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -14325,13 +14254,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = autolockGetdirlockinfoReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -14494,13 +14416,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = autolockGetlockedfileinfosReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -14662,13 +14577,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = autolockGetlockinfoReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -14827,13 +14735,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = autolockLockReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -14996,13 +14897,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = autolockRefreshReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -15164,13 +15058,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = autolockTrylockReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -15329,13 +15216,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = autolockUnlockReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -15498,13 +15378,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = configGetReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -15637,13 +15510,6 @@ namespace AnyShareSDK.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -15806,13 +15672,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = configGetoemconfigbysectionReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -15974,13 +15833,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = contactorAddgroupReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -16139,13 +15991,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = contactorAddpersonsReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -16306,13 +16151,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = contactorDeletegroupReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -16472,13 +16310,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = contactorDeletepersonsReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -16637,13 +16468,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = contactorEditgroupReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -16806,13 +16630,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = contactorGetReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -16945,13 +16762,6 @@ namespace AnyShareSDK.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -17114,13 +16924,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = contactorGetpersonsReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -17281,13 +17084,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = contactorSearchReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -17450,13 +17246,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = contactorSearchcountReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -17618,13 +17407,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = contactorSearchpersonsReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -17648,6 +17430,167 @@ namespace AnyShareSDK.Api
             return new ApiResponse<ContactorSearchpersonsRes>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
                 (ContactorSearchpersonsRes) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactorSearchpersonsRes)));
+        }
+
+        /// <summary>
+        /// 获取部门基本信息 
+        /// </summary>
+        /// <exception cref="AnyShareSDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="departmentGetbasicinfoReq"></param>
+        /// <returns>DepartmentGetbasicinfoRes</returns>
+        public DepartmentGetbasicinfoRes DepartmentGetbasicinfoPost (DepartmentGetbasicinfoReq departmentGetbasicinfoReq)
+        {
+             ApiResponse<DepartmentGetbasicinfoRes> localVarResponse = DepartmentGetbasicinfoPostWithHttpInfo(departmentGetbasicinfoReq);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// 获取部门基本信息 
+        /// </summary>
+        /// <exception cref="AnyShareSDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="departmentGetbasicinfoReq"></param>
+        /// <returns>ApiResponse of DepartmentGetbasicinfoRes</returns>
+        public ApiResponse<DepartmentGetbasicinfoRes> DepartmentGetbasicinfoPostWithHttpInfo (DepartmentGetbasicinfoReq departmentGetbasicinfoReq)
+        {
+            // verify the required parameter 'departmentGetbasicinfoReq' is set
+            if (departmentGetbasicinfoReq == null)
+                throw new ApiException(400, "Missing required parameter 'departmentGetbasicinfoReq' when calling DefaultApi->DepartmentGetbasicinfoPost");
+
+            var localVarPath = "/department/getbasicinfo";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (departmentGetbasicinfoReq != null && departmentGetbasicinfoReq.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(departmentGetbasicinfoReq); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = departmentGetbasicinfoReq; // byte array
+            }
+
+            // authentication (bearerAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DepartmentGetbasicinfoPost", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<DepartmentGetbasicinfoRes>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (DepartmentGetbasicinfoRes) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DepartmentGetbasicinfoRes)));
+        }
+
+        /// <summary>
+        /// 获取部门基本信息 
+        /// </summary>
+        /// <exception cref="AnyShareSDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="departmentGetbasicinfoReq"></param>
+        /// <returns>Task of DepartmentGetbasicinfoRes</returns>
+        public async System.Threading.Tasks.Task<DepartmentGetbasicinfoRes> DepartmentGetbasicinfoPostAsync (DepartmentGetbasicinfoReq departmentGetbasicinfoReq)
+        {
+             ApiResponse<DepartmentGetbasicinfoRes> localVarResponse = await DepartmentGetbasicinfoPostAsyncWithHttpInfo(departmentGetbasicinfoReq);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// 获取部门基本信息 
+        /// </summary>
+        /// <exception cref="AnyShareSDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="departmentGetbasicinfoReq"></param>
+        /// <returns>Task of ApiResponse (DepartmentGetbasicinfoRes)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<DepartmentGetbasicinfoRes>> DepartmentGetbasicinfoPostAsyncWithHttpInfo (DepartmentGetbasicinfoReq departmentGetbasicinfoReq)
+        {
+            // verify the required parameter 'departmentGetbasicinfoReq' is set
+            if (departmentGetbasicinfoReq == null)
+                throw new ApiException(400, "Missing required parameter 'departmentGetbasicinfoReq' when calling DefaultApi->DepartmentGetbasicinfoPost");
+
+            var localVarPath = "/department/getbasicinfo";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (departmentGetbasicinfoReq != null && departmentGetbasicinfoReq.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(departmentGetbasicinfoReq); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = departmentGetbasicinfoReq; // byte array
+            }
+
+            // authentication (bearerAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DepartmentGetbasicinfoPost", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<DepartmentGetbasicinfoRes>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (DepartmentGetbasicinfoRes) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DepartmentGetbasicinfoRes)));
         }
 
         /// <summary>
@@ -17757,13 +17700,6 @@ namespace AnyShareSDK.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -17926,13 +17862,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = departmentGetsubusersReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -18093,13 +18022,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = departmentGetsubusersReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -18262,13 +18184,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = departmentSearchReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -18430,13 +18345,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = departmentSearchcountReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -18593,13 +18501,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = deviceDisableReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -18758,13 +18659,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = deviceEnableReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -18921,13 +18815,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = deviceEraseReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -19090,13 +18977,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = deviceGetstatusReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -19229,13 +19109,6 @@ namespace AnyShareSDK.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -19406,13 +19279,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = deviceOnerasesucReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -19571,13 +19437,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = dirAddtagReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -19740,13 +19599,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = dirAddtagsReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -19907,13 +19759,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = dirAttributeReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -20076,13 +19921,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = dirCheckwatermarkReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -20243,13 +20081,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = dirCopyReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -20412,13 +20243,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = dirCopyprogressReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -20579,13 +20403,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = dirCreateReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -20748,13 +20565,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = dirCreatemultileveldirReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -20916,13 +20726,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = dirDeleteReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -21081,13 +20884,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = dirDeletetagReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -21250,13 +21046,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = dirGetsuggestnameReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -21417,13 +21206,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = dirIsfileoutboxReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -21586,13 +21368,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = dirListReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -21753,13 +21528,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = dirMoveReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -21922,13 +21690,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = dirRenameReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -22089,13 +21850,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = dirSetcsflevelReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -22258,13 +22012,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = dirSizeReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -22288,6 +22035,167 @@ namespace AnyShareSDK.Api
             return new ApiResponse<DirSizeRes>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
                 (DirSizeRes) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DirSizeRes)));
+        }
+
+        /// <summary>
+        /// 获取文件定密信息 
+        /// </summary>
+        /// <exception cref="AnyShareSDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="fileGetcsfinfoReq"></param>
+        /// <returns>FileGetcsfinfoRes</returns>
+        public FileGetcsfinfoRes EfastV1FileGetcsfinfoPost (FileGetcsfinfoReq fileGetcsfinfoReq)
+        {
+             ApiResponse<FileGetcsfinfoRes> localVarResponse = EfastV1FileGetcsfinfoPostWithHttpInfo(fileGetcsfinfoReq);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// 获取文件定密信息 
+        /// </summary>
+        /// <exception cref="AnyShareSDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="fileGetcsfinfoReq"></param>
+        /// <returns>ApiResponse of FileGetcsfinfoRes</returns>
+        public ApiResponse<FileGetcsfinfoRes> EfastV1FileGetcsfinfoPostWithHttpInfo (FileGetcsfinfoReq fileGetcsfinfoReq)
+        {
+            // verify the required parameter 'fileGetcsfinfoReq' is set
+            if (fileGetcsfinfoReq == null)
+                throw new ApiException(400, "Missing required parameter 'fileGetcsfinfoReq' when calling DefaultApi->EfastV1FileGetcsfinfoPost");
+
+            var localVarPath = "/efast/v1/file/getcsfinfo";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (fileGetcsfinfoReq != null && fileGetcsfinfoReq.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(fileGetcsfinfoReq); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = fileGetcsfinfoReq; // byte array
+            }
+
+            // authentication (bearerAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("EfastV1FileGetcsfinfoPost", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<FileGetcsfinfoRes>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (FileGetcsfinfoRes) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FileGetcsfinfoRes)));
+        }
+
+        /// <summary>
+        /// 获取文件定密信息 
+        /// </summary>
+        /// <exception cref="AnyShareSDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="fileGetcsfinfoReq"></param>
+        /// <returns>Task of FileGetcsfinfoRes</returns>
+        public async System.Threading.Tasks.Task<FileGetcsfinfoRes> EfastV1FileGetcsfinfoPostAsync (FileGetcsfinfoReq fileGetcsfinfoReq)
+        {
+             ApiResponse<FileGetcsfinfoRes> localVarResponse = await EfastV1FileGetcsfinfoPostAsyncWithHttpInfo(fileGetcsfinfoReq);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// 获取文件定密信息 
+        /// </summary>
+        /// <exception cref="AnyShareSDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="fileGetcsfinfoReq"></param>
+        /// <returns>Task of ApiResponse (FileGetcsfinfoRes)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<FileGetcsfinfoRes>> EfastV1FileGetcsfinfoPostAsyncWithHttpInfo (FileGetcsfinfoReq fileGetcsfinfoReq)
+        {
+            // verify the required parameter 'fileGetcsfinfoReq' is set
+            if (fileGetcsfinfoReq == null)
+                throw new ApiException(400, "Missing required parameter 'fileGetcsfinfoReq' when calling DefaultApi->EfastV1FileGetcsfinfoPost");
+
+            var localVarPath = "/efast/v1/file/getcsfinfo";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (fileGetcsfinfoReq != null && fileGetcsfinfoReq.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(fileGetcsfinfoReq); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = fileGetcsfinfoReq; // byte array
+            }
+
+            // authentication (bearerAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("EfastV1FileGetcsfinfoPost", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<FileGetcsfinfoRes>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (FileGetcsfinfoRes) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FileGetcsfinfoRes)));
         }
 
         /// <summary>
@@ -22425,13 +22333,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = entrydoc2GetReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -22594,13 +22495,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = entrydoc2GetdocinfoReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -22762,13 +22656,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = entrydoc2GetdocquotaReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -22902,13 +22789,6 @@ namespace AnyShareSDK.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -23041,13 +22921,6 @@ namespace AnyShareSDK.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -23207,13 +23080,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = favoritesAddReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -23376,13 +23242,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = favoritesCheckReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -23542,13 +23401,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = favoritesDeleteReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -23681,13 +23533,6 @@ namespace AnyShareSDK.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -23847,13 +23692,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = fileAddtagReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -24016,13 +23854,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = fileAddtagsReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -24183,13 +24014,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = fileAttributeReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -24352,13 +24176,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = fileBatchdownloadReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -24519,13 +24336,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = fileConvertpathReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -24688,13 +24498,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = fileCopyReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -24856,13 +24659,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = fileCustomattributevalueReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -25021,13 +24817,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = fileDeleteReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -25188,13 +24977,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = fileDeletecommentReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -25353,13 +25135,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = fileDeletetagReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -25522,13 +25297,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = fileDuploadReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -25689,13 +25457,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = fileGetappmetadataReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -25858,13 +25619,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = fileGetcommentReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -26025,13 +25779,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = fileGetfilecustomattributeReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -26194,13 +25941,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = fileGetinfobypathReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -26361,13 +26101,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = fileGetsuggestnameReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -26530,13 +26263,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = fileMetadataReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -26697,13 +26423,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = fileMoveReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -26866,13 +26585,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = fileOpstatisticsReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -26899,7 +26611,7 @@ namespace AnyShareSDK.Api
         }
 
         /// <summary>
-        /// 开始上传文件协议 1. 如果reqmethod为PUT，收到该请求后，客户端自行发送上传文件内容的请求到云存储平台，填入Authorization和Date，然后15分钟内发送PUT请求        Header包含：      &#x60;&#x60;&#x60;      “Authorization: AWS AKIAJEROARV2UTTADY6A:PkLXjvYrDGDVZgTD8WVbMmS33q4&#x3D;”      “Date: Tue, 07 Apr 2015 02:35:36 GMT”      “Content-Length: 42”      “Content-Type: application/octet-stream”      &#x60;&#x60;&#x60;        URL为：https://s3-ap-northeast-1.amazonaws.com/anyshares3accesstestbucket/21A9B9FD1B524CB49D54BF7399F82EB4/AAA6CBAFE45B4E4D884DC59805E60A5C            Body为：文件内容  2. 如果reqmethod为POST，收到该请求后，客户端自行设置发送上传文件内容的表单请求到云存储平台，填入各表单项，然后15分钟内发送POST请求。阿里云OSS和亚马逊S3要求file必须为表单中最后一个域。  
+        /// 开始上传文件协议 1. 如果reqmethod为PUT，收到响应后，客户端自行发送上传文件http请求到对象存储，填入响应中authrequest字段包含的header，然后15分钟内发送PUT请求            示例：            URL：https://s3-ap-northeast-1.amazonaws.com/anyshares3accesstestbucket/21A9B9FD1B524CB49D54BF7399F82EB4/AAA6CBAFE45B4E4D884DC59805E60A5C            Header：      &#x60;&#x60;&#x60;      “Authorization: AWS AKIAJEROARV2UTTADY6A:PkLXjvYrDGDVZgTD8WVbMmS33q4&#x3D;”      “Date: Tue, 07 Apr 2015 02:35:36 GMT”      “Content-Length: 42”      “Content-Type: application/octet-stream”      &#x60;&#x60;&#x60;            Body：文件内容  2. 如果reqmethod为POST，收到响应后，客户端自行设置发送上传文件内容的表单请求到对象存储，填入各表单项，然后15分钟内发送POST请求。阿里云OSS和亚马逊S3要求file必须为表单中最后一个域。  
         /// </summary>
         /// <exception cref="AnyShareSDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileOsbeginuploadReq"></param>
@@ -26911,7 +26623,7 @@ namespace AnyShareSDK.Api
         }
 
         /// <summary>
-        /// 开始上传文件协议 1. 如果reqmethod为PUT，收到该请求后，客户端自行发送上传文件内容的请求到云存储平台，填入Authorization和Date，然后15分钟内发送PUT请求        Header包含：      &#x60;&#x60;&#x60;      “Authorization: AWS AKIAJEROARV2UTTADY6A:PkLXjvYrDGDVZgTD8WVbMmS33q4&#x3D;”      “Date: Tue, 07 Apr 2015 02:35:36 GMT”      “Content-Length: 42”      “Content-Type: application/octet-stream”      &#x60;&#x60;&#x60;        URL为：https://s3-ap-northeast-1.amazonaws.com/anyshares3accesstestbucket/21A9B9FD1B524CB49D54BF7399F82EB4/AAA6CBAFE45B4E4D884DC59805E60A5C            Body为：文件内容  2. 如果reqmethod为POST，收到该请求后，客户端自行设置发送上传文件内容的表单请求到云存储平台，填入各表单项，然后15分钟内发送POST请求。阿里云OSS和亚马逊S3要求file必须为表单中最后一个域。  
+        /// 开始上传文件协议 1. 如果reqmethod为PUT，收到响应后，客户端自行发送上传文件http请求到对象存储，填入响应中authrequest字段包含的header，然后15分钟内发送PUT请求            示例：            URL：https://s3-ap-northeast-1.amazonaws.com/anyshares3accesstestbucket/21A9B9FD1B524CB49D54BF7399F82EB4/AAA6CBAFE45B4E4D884DC59805E60A5C            Header：      &#x60;&#x60;&#x60;      “Authorization: AWS AKIAJEROARV2UTTADY6A:PkLXjvYrDGDVZgTD8WVbMmS33q4&#x3D;”      “Date: Tue, 07 Apr 2015 02:35:36 GMT”      “Content-Length: 42”      “Content-Type: application/octet-stream”      &#x60;&#x60;&#x60;            Body：文件内容  2. 如果reqmethod为POST，收到响应后，客户端自行设置发送上传文件内容的表单请求到对象存储，填入各表单项，然后15分钟内发送POST请求。阿里云OSS和亚马逊S3要求file必须为表单中最后一个域。  
         /// </summary>
         /// <exception cref="AnyShareSDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileOsbeginuploadReq"></param>
@@ -26979,7 +26691,7 @@ namespace AnyShareSDK.Api
         }
 
         /// <summary>
-        /// 开始上传文件协议 1. 如果reqmethod为PUT，收到该请求后，客户端自行发送上传文件内容的请求到云存储平台，填入Authorization和Date，然后15分钟内发送PUT请求        Header包含：      &#x60;&#x60;&#x60;      “Authorization: AWS AKIAJEROARV2UTTADY6A:PkLXjvYrDGDVZgTD8WVbMmS33q4&#x3D;”      “Date: Tue, 07 Apr 2015 02:35:36 GMT”      “Content-Length: 42”      “Content-Type: application/octet-stream”      &#x60;&#x60;&#x60;        URL为：https://s3-ap-northeast-1.amazonaws.com/anyshares3accesstestbucket/21A9B9FD1B524CB49D54BF7399F82EB4/AAA6CBAFE45B4E4D884DC59805E60A5C            Body为：文件内容  2. 如果reqmethod为POST，收到该请求后，客户端自行设置发送上传文件内容的表单请求到云存储平台，填入各表单项，然后15分钟内发送POST请求。阿里云OSS和亚马逊S3要求file必须为表单中最后一个域。  
+        /// 开始上传文件协议 1. 如果reqmethod为PUT，收到响应后，客户端自行发送上传文件http请求到对象存储，填入响应中authrequest字段包含的header，然后15分钟内发送PUT请求            示例：            URL：https://s3-ap-northeast-1.amazonaws.com/anyshares3accesstestbucket/21A9B9FD1B524CB49D54BF7399F82EB4/AAA6CBAFE45B4E4D884DC59805E60A5C            Header：      &#x60;&#x60;&#x60;      “Authorization: AWS AKIAJEROARV2UTTADY6A:PkLXjvYrDGDVZgTD8WVbMmS33q4&#x3D;”      “Date: Tue, 07 Apr 2015 02:35:36 GMT”      “Content-Length: 42”      “Content-Type: application/octet-stream”      &#x60;&#x60;&#x60;            Body：文件内容  2. 如果reqmethod为POST，收到响应后，客户端自行设置发送上传文件内容的表单请求到对象存储，填入各表单项，然后15分钟内发送POST请求。阿里云OSS和亚马逊S3要求file必须为表单中最后一个域。  
         /// </summary>
         /// <exception cref="AnyShareSDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileOsbeginuploadReq"></param>
@@ -26992,7 +26704,7 @@ namespace AnyShareSDK.Api
         }
 
         /// <summary>
-        /// 开始上传文件协议 1. 如果reqmethod为PUT，收到该请求后，客户端自行发送上传文件内容的请求到云存储平台，填入Authorization和Date，然后15分钟内发送PUT请求        Header包含：      &#x60;&#x60;&#x60;      “Authorization: AWS AKIAJEROARV2UTTADY6A:PkLXjvYrDGDVZgTD8WVbMmS33q4&#x3D;”      “Date: Tue, 07 Apr 2015 02:35:36 GMT”      “Content-Length: 42”      “Content-Type: application/octet-stream”      &#x60;&#x60;&#x60;        URL为：https://s3-ap-northeast-1.amazonaws.com/anyshares3accesstestbucket/21A9B9FD1B524CB49D54BF7399F82EB4/AAA6CBAFE45B4E4D884DC59805E60A5C            Body为：文件内容  2. 如果reqmethod为POST，收到该请求后，客户端自行设置发送上传文件内容的表单请求到云存储平台，填入各表单项，然后15分钟内发送POST请求。阿里云OSS和亚马逊S3要求file必须为表单中最后一个域。  
+        /// 开始上传文件协议 1. 如果reqmethod为PUT，收到响应后，客户端自行发送上传文件http请求到对象存储，填入响应中authrequest字段包含的header，然后15分钟内发送PUT请求            示例：            URL：https://s3-ap-northeast-1.amazonaws.com/anyshares3accesstestbucket/21A9B9FD1B524CB49D54BF7399F82EB4/AAA6CBAFE45B4E4D884DC59805E60A5C            Header：      &#x60;&#x60;&#x60;      “Authorization: AWS AKIAJEROARV2UTTADY6A:PkLXjvYrDGDVZgTD8WVbMmS33q4&#x3D;”      “Date: Tue, 07 Apr 2015 02:35:36 GMT”      “Content-Length: 42”      “Content-Type: application/octet-stream”      &#x60;&#x60;&#x60;            Body：文件内容  2. 如果reqmethod为POST，收到响应后，客户端自行设置发送上传文件内容的表单请求到对象存储，填入各表单项，然后15分钟内发送POST请求。阿里云OSS和亚马逊S3要求file必须为表单中最后一个域。  
         /// </summary>
         /// <exception cref="AnyShareSDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileOsbeginuploadReq"></param>
@@ -27033,13 +26745,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = fileOsbeginuploadReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -27204,13 +26909,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = fileOscompleteuploadReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -27371,13 +27069,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = fileOsdownloadReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -27540,13 +27231,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = fileOsenduploadReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -27708,13 +27392,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = fileOsinitmultiuploadReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -27848,13 +27525,6 @@ namespace AnyShareSDK.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -27881,7 +27551,7 @@ namespace AnyShareSDK.Api
         }
 
         /// <summary>
-        /// 上传大文件的分块协议 1. 收到该响应后，客户端自行发送文件分片内容的请求到云存储平台。  2. 客户端在请求Header中填入Authorization和Date，15分钟内发送PUT请求        Header包含：      &#x60;&#x60;&#x60;      “Authorization: AWS AKIAJEROARV2UTTADY6A:PkLXjvYrDGDVZgTD8WVbMmS33q4&#x3D;”      “Date: Tue, 07 Apr 2015 02:35:36 GMT”      “Content-Length: 42”      &#x60;&#x60;&#x60;      URL为：https://s3-ap-northeast-1.amazonaws.com/anyshares3accesstestbucket/21A9B9FD1B524CB49D54BF7399F82EB4/AAA6CBAFE45B4E4D884DC59805E60A5C?partNumber&#x3D;1&amp;uploadId&#x3D;0004B9895DBBB6EC98E36            Body为：分片内容  3. 对象存储返回响应信息时，响应header中可能包含Etag值，用于标识所上传对象分片。如果存在key为ETag/ETAG/etag/Etag等值的header，需要取得其对应的值，作为完成大文件分块上传协议oscompleteupload的传参，见参数partetag及请求示例。            需注意，不同对象存储返回的Etag的header，key大小写可能不同，可能为ETag/ETAG/etag/Etag等。可以对响应header进行遍历，对每个key转为小写，和字符串“etag”对比，获取对应的值。一个可能的响应header示例为：Etag: ce1c8d1c3900c64feaa651052d75acd9    4. 亚马逊S3限定分块大小不能小于5MB，七牛存储限定分块大小为4M的倍数。见“对象存储选项值协议”说明
+        /// 上传大文件的分块协议 1. 收到该响应后，客户端自行发送文件分片内容的请求到对象存储。  2. 客户端在请求Header中填入authrequests中的header，15分钟内发送PUT请求        示例：        URL：https://s3-ap-northeast-1.amazonaws.com/anyshares3accesstestbucket/21A9B9FD1B524CB49D54BF7399F82EB4/AAA6CBAFE45B4E4D884DC59805E60A5C?partNumber&#x3D;1&amp;uploadId&#x3D;0004B9895DBBB6EC98E36            Header：      &#x60;&#x60;&#x60;      “Authorization: AWS AKIAJEROARV2UTTADY6A:PkLXjvYrDGDVZgTD8WVbMmS33q4&#x3D;”      “Date: Tue, 07 Apr 2015 02:35:36 GMT”      “Content-Length: 42”      &#x60;&#x60;&#x60;            Body：分片内容  3. 对象存储返回响应信息时，响应header中可能包含Etag值，用于标识所上传对象分片。如果存在key为ETag/ETAG/etag/Etag等值的header，需要取得其对应的值，作为完成大文件分块上传协议oscompleteupload的传参，见参数partetag及请求示例。            需注意，不同对象存储返回的Etag的header，key大小写可能不同，可能为ETag/ETAG/etag/Etag等。可以对响应header进行遍历，对每个key转为小写，和字符串“etag”对比，获取对应的值。一个可能的响应header示例为：Etag: ce1c8d1c3900c64feaa651052d75acd9    4. 亚马逊S3限定分块大小不能小于5MB，七牛存储限定分块大小为4M的倍数。见“对象存储选项值协议”说明
         /// </summary>
         /// <exception cref="AnyShareSDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileOsuploadpartReq"></param>
@@ -27893,7 +27563,7 @@ namespace AnyShareSDK.Api
         }
 
         /// <summary>
-        /// 上传大文件的分块协议 1. 收到该响应后，客户端自行发送文件分片内容的请求到云存储平台。  2. 客户端在请求Header中填入Authorization和Date，15分钟内发送PUT请求        Header包含：      &#x60;&#x60;&#x60;      “Authorization: AWS AKIAJEROARV2UTTADY6A:PkLXjvYrDGDVZgTD8WVbMmS33q4&#x3D;”      “Date: Tue, 07 Apr 2015 02:35:36 GMT”      “Content-Length: 42”      &#x60;&#x60;&#x60;      URL为：https://s3-ap-northeast-1.amazonaws.com/anyshares3accesstestbucket/21A9B9FD1B524CB49D54BF7399F82EB4/AAA6CBAFE45B4E4D884DC59805E60A5C?partNumber&#x3D;1&amp;uploadId&#x3D;0004B9895DBBB6EC98E36            Body为：分片内容  3. 对象存储返回响应信息时，响应header中可能包含Etag值，用于标识所上传对象分片。如果存在key为ETag/ETAG/etag/Etag等值的header，需要取得其对应的值，作为完成大文件分块上传协议oscompleteupload的传参，见参数partetag及请求示例。            需注意，不同对象存储返回的Etag的header，key大小写可能不同，可能为ETag/ETAG/etag/Etag等。可以对响应header进行遍历，对每个key转为小写，和字符串“etag”对比，获取对应的值。一个可能的响应header示例为：Etag: ce1c8d1c3900c64feaa651052d75acd9    4. 亚马逊S3限定分块大小不能小于5MB，七牛存储限定分块大小为4M的倍数。见“对象存储选项值协议”说明
+        /// 上传大文件的分块协议 1. 收到该响应后，客户端自行发送文件分片内容的请求到对象存储。  2. 客户端在请求Header中填入authrequests中的header，15分钟内发送PUT请求        示例：        URL：https://s3-ap-northeast-1.amazonaws.com/anyshares3accesstestbucket/21A9B9FD1B524CB49D54BF7399F82EB4/AAA6CBAFE45B4E4D884DC59805E60A5C?partNumber&#x3D;1&amp;uploadId&#x3D;0004B9895DBBB6EC98E36            Header：      &#x60;&#x60;&#x60;      “Authorization: AWS AKIAJEROARV2UTTADY6A:PkLXjvYrDGDVZgTD8WVbMmS33q4&#x3D;”      “Date: Tue, 07 Apr 2015 02:35:36 GMT”      “Content-Length: 42”      &#x60;&#x60;&#x60;            Body：分片内容  3. 对象存储返回响应信息时，响应header中可能包含Etag值，用于标识所上传对象分片。如果存在key为ETag/ETAG/etag/Etag等值的header，需要取得其对应的值，作为完成大文件分块上传协议oscompleteupload的传参，见参数partetag及请求示例。            需注意，不同对象存储返回的Etag的header，key大小写可能不同，可能为ETag/ETAG/etag/Etag等。可以对响应header进行遍历，对每个key转为小写，和字符串“etag”对比，获取对应的值。一个可能的响应header示例为：Etag: ce1c8d1c3900c64feaa651052d75acd9    4. 亚马逊S3限定分块大小不能小于5MB，七牛存储限定分块大小为4M的倍数。见“对象存储选项值协议”说明
         /// </summary>
         /// <exception cref="AnyShareSDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileOsuploadpartReq"></param>
@@ -27961,7 +27631,7 @@ namespace AnyShareSDK.Api
         }
 
         /// <summary>
-        /// 上传大文件的分块协议 1. 收到该响应后，客户端自行发送文件分片内容的请求到云存储平台。  2. 客户端在请求Header中填入Authorization和Date，15分钟内发送PUT请求        Header包含：      &#x60;&#x60;&#x60;      “Authorization: AWS AKIAJEROARV2UTTADY6A:PkLXjvYrDGDVZgTD8WVbMmS33q4&#x3D;”      “Date: Tue, 07 Apr 2015 02:35:36 GMT”      “Content-Length: 42”      &#x60;&#x60;&#x60;      URL为：https://s3-ap-northeast-1.amazonaws.com/anyshares3accesstestbucket/21A9B9FD1B524CB49D54BF7399F82EB4/AAA6CBAFE45B4E4D884DC59805E60A5C?partNumber&#x3D;1&amp;uploadId&#x3D;0004B9895DBBB6EC98E36            Body为：分片内容  3. 对象存储返回响应信息时，响应header中可能包含Etag值，用于标识所上传对象分片。如果存在key为ETag/ETAG/etag/Etag等值的header，需要取得其对应的值，作为完成大文件分块上传协议oscompleteupload的传参，见参数partetag及请求示例。            需注意，不同对象存储返回的Etag的header，key大小写可能不同，可能为ETag/ETAG/etag/Etag等。可以对响应header进行遍历，对每个key转为小写，和字符串“etag”对比，获取对应的值。一个可能的响应header示例为：Etag: ce1c8d1c3900c64feaa651052d75acd9    4. 亚马逊S3限定分块大小不能小于5MB，七牛存储限定分块大小为4M的倍数。见“对象存储选项值协议”说明
+        /// 上传大文件的分块协议 1. 收到该响应后，客户端自行发送文件分片内容的请求到对象存储。  2. 客户端在请求Header中填入authrequests中的header，15分钟内发送PUT请求        示例：        URL：https://s3-ap-northeast-1.amazonaws.com/anyshares3accesstestbucket/21A9B9FD1B524CB49D54BF7399F82EB4/AAA6CBAFE45B4E4D884DC59805E60A5C?partNumber&#x3D;1&amp;uploadId&#x3D;0004B9895DBBB6EC98E36            Header：      &#x60;&#x60;&#x60;      “Authorization: AWS AKIAJEROARV2UTTADY6A:PkLXjvYrDGDVZgTD8WVbMmS33q4&#x3D;”      “Date: Tue, 07 Apr 2015 02:35:36 GMT”      “Content-Length: 42”      &#x60;&#x60;&#x60;            Body：分片内容  3. 对象存储返回响应信息时，响应header中可能包含Etag值，用于标识所上传对象分片。如果存在key为ETag/ETAG/etag/Etag等值的header，需要取得其对应的值，作为完成大文件分块上传协议oscompleteupload的传参，见参数partetag及请求示例。            需注意，不同对象存储返回的Etag的header，key大小写可能不同，可能为ETag/ETAG/etag/Etag等。可以对响应header进行遍历，对每个key转为小写，和字符串“etag”对比，获取对应的值。一个可能的响应header示例为：Etag: ce1c8d1c3900c64feaa651052d75acd9    4. 亚马逊S3限定分块大小不能小于5MB，七牛存储限定分块大小为4M的倍数。见“对象存储选项值协议”说明
         /// </summary>
         /// <exception cref="AnyShareSDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileOsuploadpartReq"></param>
@@ -27974,7 +27644,7 @@ namespace AnyShareSDK.Api
         }
 
         /// <summary>
-        /// 上传大文件的分块协议 1. 收到该响应后，客户端自行发送文件分片内容的请求到云存储平台。  2. 客户端在请求Header中填入Authorization和Date，15分钟内发送PUT请求        Header包含：      &#x60;&#x60;&#x60;      “Authorization: AWS AKIAJEROARV2UTTADY6A:PkLXjvYrDGDVZgTD8WVbMmS33q4&#x3D;”      “Date: Tue, 07 Apr 2015 02:35:36 GMT”      “Content-Length: 42”      &#x60;&#x60;&#x60;      URL为：https://s3-ap-northeast-1.amazonaws.com/anyshares3accesstestbucket/21A9B9FD1B524CB49D54BF7399F82EB4/AAA6CBAFE45B4E4D884DC59805E60A5C?partNumber&#x3D;1&amp;uploadId&#x3D;0004B9895DBBB6EC98E36            Body为：分片内容  3. 对象存储返回响应信息时，响应header中可能包含Etag值，用于标识所上传对象分片。如果存在key为ETag/ETAG/etag/Etag等值的header，需要取得其对应的值，作为完成大文件分块上传协议oscompleteupload的传参，见参数partetag及请求示例。            需注意，不同对象存储返回的Etag的header，key大小写可能不同，可能为ETag/ETAG/etag/Etag等。可以对响应header进行遍历，对每个key转为小写，和字符串“etag”对比，获取对应的值。一个可能的响应header示例为：Etag: ce1c8d1c3900c64feaa651052d75acd9    4. 亚马逊S3限定分块大小不能小于5MB，七牛存储限定分块大小为4M的倍数。见“对象存储选项值协议”说明
+        /// 上传大文件的分块协议 1. 收到该响应后，客户端自行发送文件分片内容的请求到对象存储。  2. 客户端在请求Header中填入authrequests中的header，15分钟内发送PUT请求        示例：        URL：https://s3-ap-northeast-1.amazonaws.com/anyshares3accesstestbucket/21A9B9FD1B524CB49D54BF7399F82EB4/AAA6CBAFE45B4E4D884DC59805E60A5C?partNumber&#x3D;1&amp;uploadId&#x3D;0004B9895DBBB6EC98E36            Header：      &#x60;&#x60;&#x60;      “Authorization: AWS AKIAJEROARV2UTTADY6A:PkLXjvYrDGDVZgTD8WVbMmS33q4&#x3D;”      “Date: Tue, 07 Apr 2015 02:35:36 GMT”      “Content-Length: 42”      &#x60;&#x60;&#x60;            Body：分片内容  3. 对象存储返回响应信息时，响应header中可能包含Etag值，用于标识所上传对象分片。如果存在key为ETag/ETAG/etag/Etag等值的header，需要取得其对应的值，作为完成大文件分块上传协议oscompleteupload的传参，见参数partetag及请求示例。            需注意，不同对象存储返回的Etag的header，key大小写可能不同，可能为ETag/ETAG/etag/Etag等。可以对响应header进行遍历，对每个key转为小写，和字符串“etag”对比，获取对应的值。一个可能的响应header示例为：Etag: ce1c8d1c3900c64feaa651052d75acd9    4. 亚马逊S3限定分块大小不能小于5MB，七牛存储限定分块大小为4M的倍数。见“对象存储选项值协议”说明
         /// </summary>
         /// <exception cref="AnyShareSDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileOsuploadpartReq"></param>
@@ -28015,13 +27685,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = fileOsuploadpartReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -28183,13 +27846,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = fileOsuploadrefreshReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -28362,13 +28018,6 @@ namespace AnyShareSDK.Api
             if (usehttps != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "usehttps", usehttps)); // query parameter
             if (tokenid != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "tokenid", tokenid)); // query parameter
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -28529,13 +28178,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = filePlayinfoReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -28702,13 +28344,6 @@ namespace AnyShareSDK.Api
             if (rev != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "rev", rev)); // query parameter
             if (tokenid != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "tokenid", tokenid)); // query parameter
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -28869,13 +28504,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = filePreduploadReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -29038,13 +28666,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = filePreviewossReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -29205,13 +28826,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = fileRenameReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -29374,13 +28988,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = fileRestorerevisionReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -29541,13 +29148,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = fileRevisionsReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -29710,13 +29310,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = fileSendReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -29875,13 +29468,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = fileSetappmetadataReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -30044,13 +29630,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = fileSetcsflevelReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -30210,13 +29789,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = fileSetfilecustomattributeReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -30375,13 +29947,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = fileSubmitcommentReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -30578,13 +30143,6 @@ namespace AnyShareSDK.Api
             if (quality != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "quality", quality)); // query parameter
             if (tokenid != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "tokenid", tokenid)); // query parameter
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -30743,13 +30301,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = finderDisableReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -30910,13 +30461,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = finderEnableReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -31049,13 +30593,6 @@ namespace AnyShareSDK.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -31218,13 +30755,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = finderGetstatusReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -31386,13 +30916,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = groupdocAddReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -31551,13 +31074,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = groupdocDeleteReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -31718,13 +31234,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = groupdocEditReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -31884,13 +31393,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = groupdocEditquotaReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -32049,13 +31551,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = invitationCloseReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -32218,13 +31713,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = invitationGetReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -32385,13 +31873,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = invitationGetbaseinfobydocidReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -32554,13 +32035,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = invitationGetnoteinfobydocidReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -32721,13 +32195,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = invitationJoinReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -32890,13 +32357,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = invitationOpenReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -33056,13 +32516,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = invitationSetbaseinfoReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -33221,13 +32674,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = invitationSetnoteinfoReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -33390,13 +32836,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = linkBatchdownloadReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -33558,13 +32997,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = linkCheckpermReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -33588,6 +33020,167 @@ namespace AnyShareSDK.Api
             return new ApiResponse<LinkCheckpermRes>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
                 (LinkCheckpermRes) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(LinkCheckpermRes)));
+        }
+
+        /// <summary>
+        /// 检查是否需要水印 
+        /// </summary>
+        /// <exception cref="AnyShareSDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="linkcheckwatermarkreq"></param>
+        /// <returns>DirCheckwatermarkRes</returns>
+        public DirCheckwatermarkRes LinkCheckwatermarkPost (Linkcheckwatermarkreq linkcheckwatermarkreq)
+        {
+             ApiResponse<DirCheckwatermarkRes> localVarResponse = LinkCheckwatermarkPostWithHttpInfo(linkcheckwatermarkreq);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// 检查是否需要水印 
+        /// </summary>
+        /// <exception cref="AnyShareSDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="linkcheckwatermarkreq"></param>
+        /// <returns>ApiResponse of DirCheckwatermarkRes</returns>
+        public ApiResponse<DirCheckwatermarkRes> LinkCheckwatermarkPostWithHttpInfo (Linkcheckwatermarkreq linkcheckwatermarkreq)
+        {
+            // verify the required parameter 'linkcheckwatermarkreq' is set
+            if (linkcheckwatermarkreq == null)
+                throw new ApiException(400, "Missing required parameter 'linkcheckwatermarkreq' when calling DefaultApi->LinkCheckwatermarkPost");
+
+            var localVarPath = "/link/checkwatermark";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (linkcheckwatermarkreq != null && linkcheckwatermarkreq.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(linkcheckwatermarkreq); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = linkcheckwatermarkreq; // byte array
+            }
+
+            // authentication (bearerAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("LinkCheckwatermarkPost", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<DirCheckwatermarkRes>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (DirCheckwatermarkRes) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DirCheckwatermarkRes)));
+        }
+
+        /// <summary>
+        /// 检查是否需要水印 
+        /// </summary>
+        /// <exception cref="AnyShareSDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="linkcheckwatermarkreq"></param>
+        /// <returns>Task of DirCheckwatermarkRes</returns>
+        public async System.Threading.Tasks.Task<DirCheckwatermarkRes> LinkCheckwatermarkPostAsync (Linkcheckwatermarkreq linkcheckwatermarkreq)
+        {
+             ApiResponse<DirCheckwatermarkRes> localVarResponse = await LinkCheckwatermarkPostAsyncWithHttpInfo(linkcheckwatermarkreq);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// 检查是否需要水印 
+        /// </summary>
+        /// <exception cref="AnyShareSDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="linkcheckwatermarkreq"></param>
+        /// <returns>Task of ApiResponse (DirCheckwatermarkRes)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<DirCheckwatermarkRes>> LinkCheckwatermarkPostAsyncWithHttpInfo (Linkcheckwatermarkreq linkcheckwatermarkreq)
+        {
+            // verify the required parameter 'linkcheckwatermarkreq' is set
+            if (linkcheckwatermarkreq == null)
+                throw new ApiException(400, "Missing required parameter 'linkcheckwatermarkreq' when calling DefaultApi->LinkCheckwatermarkPost");
+
+            var localVarPath = "/link/checkwatermark";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (linkcheckwatermarkreq != null && linkcheckwatermarkreq.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(linkcheckwatermarkreq); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = linkcheckwatermarkreq; // byte array
+            }
+
+            // authentication (bearerAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("LinkCheckwatermarkPost", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<DirCheckwatermarkRes>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (DirCheckwatermarkRes) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DirCheckwatermarkRes)));
         }
 
         /// <summary>
@@ -33723,13 +33316,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = linkCloseReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -33892,13 +33478,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = linkCopyReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -34059,13 +33638,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = linkCopyprogressReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -34228,13 +33800,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = linkGetReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -34395,13 +33960,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = linkGetdetailReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -34564,13 +34122,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = linkGetinfoReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -34703,13 +34254,6 @@ namespace AnyShareSDK.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -34872,13 +34416,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = linkListdirReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -35039,13 +34576,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = linkOpenReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -35208,13 +34738,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = linkOpfilesReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -35375,13 +34898,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = linkOpstatisticsReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -35544,13 +35060,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = linkOsbeginuploadReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -35711,13 +35220,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = linkOsdownloadReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -35880,13 +35382,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = linkOsenduploadReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -36045,13 +35540,6 @@ namespace AnyShareSDK.Api
             if (docid != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "docid", docid)); // query parameter
             if (reqhost != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "reqhost", reqhost)); // query parameter
             if (usehttps != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "usehttps", usehttps)); // query parameter
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -36214,13 +35702,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = linkPlayinfoReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -36373,13 +35854,6 @@ namespace AnyShareSDK.Api
 
             if (docid != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "docid", docid)); // query parameter
             if (rev != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "rev", rev)); // query parameter
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -36542,13 +36016,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = linkPreviewossReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -36709,13 +36176,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = linkSetReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -36918,13 +36378,6 @@ namespace AnyShareSDK.Api
             if (width != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "width", width)); // query parameter
             if (quality != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "quality", quality)); // query parameter
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -37086,13 +36539,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = messageGetReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -37251,13 +36697,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = messageRead2Req; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -37418,13 +36857,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = messageSendmailReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -37583,13 +37015,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = ownerAddReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -37752,13 +37177,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = ownerCheckReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -37917,13 +37335,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = ownerDeleteReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -38086,13 +37497,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = ownerGetReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -38253,13 +37657,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = ownerSetReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -38422,13 +37819,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = perm1CheckReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -38590,13 +37980,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = perm1CheckallReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -38729,13 +38112,6 @@ namespace AnyShareSDK.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -38870,13 +38246,6 @@ namespace AnyShareSDK.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -39010,13 +38379,6 @@ namespace AnyShareSDK.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -39149,13 +38511,6 @@ namespace AnyShareSDK.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -39318,13 +38673,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = perm1ListReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -39485,13 +38833,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = perm2GetReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -39654,13 +38995,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = perm2SetReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -39820,13 +39154,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = quarantineAppealReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -39960,13 +39287,6 @@ namespace AnyShareSDK.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -39997,10 +39317,10 @@ namespace AnyShareSDK.Api
         /// </summary>
         /// <exception cref="AnyShareSDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="quarantineListreversionReq"></param>
-        /// <returns>QuarantineListreversionRes</returns>
-        public QuarantineListreversionRes QuarantineListreversionPost (QuarantineListreversionReq quarantineListreversionReq)
+        /// <returns>List&lt;QuarantineListreversionRes&gt;</returns>
+        public List<QuarantineListreversionRes> QuarantineListreversionPost (QuarantineListreversionReq quarantineListreversionReq)
         {
-             ApiResponse<QuarantineListreversionRes> localVarResponse = QuarantineListreversionPostWithHttpInfo(quarantineListreversionReq);
+             ApiResponse<List<QuarantineListreversionRes>> localVarResponse = QuarantineListreversionPostWithHttpInfo(quarantineListreversionReq);
              return localVarResponse.Data;
         }
 
@@ -40009,8 +39329,8 @@ namespace AnyShareSDK.Api
         /// </summary>
         /// <exception cref="AnyShareSDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="quarantineListreversionReq"></param>
-        /// <returns>ApiResponse of QuarantineListreversionRes</returns>
-        public ApiResponse<QuarantineListreversionRes> QuarantineListreversionPostWithHttpInfo (QuarantineListreversionReq quarantineListreversionReq)
+        /// <returns>ApiResponse of List&lt;QuarantineListreversionRes&gt;</returns>
+        public ApiResponse<List<QuarantineListreversionRes>> QuarantineListreversionPostWithHttpInfo (QuarantineListreversionReq quarantineListreversionReq)
         {
             // verify the required parameter 'quarantineListreversionReq' is set
             if (quarantineListreversionReq == null)
@@ -40067,9 +39387,9 @@ namespace AnyShareSDK.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<QuarantineListreversionRes>(localVarStatusCode,
+            return new ApiResponse<List<QuarantineListreversionRes>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (QuarantineListreversionRes) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(QuarantineListreversionRes)));
+                (List<QuarantineListreversionRes>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<QuarantineListreversionRes>)));
         }
 
         /// <summary>
@@ -40077,10 +39397,10 @@ namespace AnyShareSDK.Api
         /// </summary>
         /// <exception cref="AnyShareSDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="quarantineListreversionReq"></param>
-        /// <returns>Task of QuarantineListreversionRes</returns>
-        public async System.Threading.Tasks.Task<QuarantineListreversionRes> QuarantineListreversionPostAsync (QuarantineListreversionReq quarantineListreversionReq)
+        /// <returns>Task of List&lt;QuarantineListreversionRes&gt;</returns>
+        public async System.Threading.Tasks.Task<List<QuarantineListreversionRes>> QuarantineListreversionPostAsync (QuarantineListreversionReq quarantineListreversionReq)
         {
-             ApiResponse<QuarantineListreversionRes> localVarResponse = await QuarantineListreversionPostAsyncWithHttpInfo(quarantineListreversionReq);
+             ApiResponse<List<QuarantineListreversionRes>> localVarResponse = await QuarantineListreversionPostAsyncWithHttpInfo(quarantineListreversionReq);
              return localVarResponse.Data;
 
         }
@@ -40090,8 +39410,8 @@ namespace AnyShareSDK.Api
         /// </summary>
         /// <exception cref="AnyShareSDK.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="quarantineListreversionReq"></param>
-        /// <returns>Task of ApiResponse (QuarantineListreversionRes)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<QuarantineListreversionRes>> QuarantineListreversionPostAsyncWithHttpInfo (QuarantineListreversionReq quarantineListreversionReq)
+        /// <returns>Task of ApiResponse (List&lt;QuarantineListreversionRes&gt;)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<List<QuarantineListreversionRes>>> QuarantineListreversionPostAsyncWithHttpInfo (QuarantineListreversionReq quarantineListreversionReq)
         {
             // verify the required parameter 'quarantineListreversionReq' is set
             if (quarantineListreversionReq == null)
@@ -40128,13 +39448,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = quarantineListreversionReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -40155,9 +39468,9 @@ namespace AnyShareSDK.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<QuarantineListreversionRes>(localVarStatusCode,
+            return new ApiResponse<List<QuarantineListreversionRes>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (QuarantineListreversionRes) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(QuarantineListreversionRes)));
+                (List<QuarantineListreversionRes>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<QuarantineListreversionRes>)));
         }
 
         /// <summary>
@@ -40295,13 +39608,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = quarantinePreviewReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -40461,13 +39767,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = recycleDeleteReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -40630,13 +39929,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = recycleGetretentiondaysReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -40797,13 +40089,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = recycleGetsuggestnameReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -40966,13 +40251,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = recycleListReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -41134,13 +40412,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = recycleRestoreReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -41300,13 +40571,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = recycleSetretentiondaysReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -41440,13 +40704,6 @@ namespace AnyShareSDK.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -41579,13 +40836,6 @@ namespace AnyShareSDK.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -41748,13 +40998,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = searchSearchReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -41915,13 +41158,6 @@ namespace AnyShareSDK.Api
             {
                 localVarPostBody = searchTagsuggestReq; // byte array
             }
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -42084,13 +41320,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = updateCheckReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -42252,13 +41481,6 @@ namespace AnyShareSDK.Api
                 localVarPostBody = updateDownloadReq; // byte array
             }
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -42391,13 +41613,6 @@ namespace AnyShareSDK.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
 
             // authentication (bearerAuth) required
             // oauth required
@@ -42532,13 +41747,6 @@ namespace AnyShareSDK.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
 
-            //// authentication (bearerAuth) required
-            //// http basic authentication required
-            //if (!String.IsNullOrEmpty(this.Configuration.Username) || !String.IsNullOrEmpty(this.Configuration.Password))
-            //{
-            //    localVarHeaderParams["Authorization"] = "Basic " + ApiClient.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password);
-            //}
-
             // authentication (bearerAuth) required
             // oauth required
             if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
@@ -42563,5 +41771,167 @@ namespace AnyShareSDK.Api
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
                 (UserGetRes) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserGetRes)));
         }
+
+        /// <summary>
+        /// 获取用户基本信息 
+        /// </summary>
+        /// <exception cref="AnyShareSDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userGetbasicinfoReq"></param>
+        /// <returns>UserGetbasicinfoRes</returns>
+        public UserGetbasicinfoRes UserGetbasicinfoPost (UserGetbasicinfoReq userGetbasicinfoReq)
+        {
+             ApiResponse<UserGetbasicinfoRes> localVarResponse = UserGetbasicinfoPostWithHttpInfo(userGetbasicinfoReq);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// 获取用户基本信息 
+        /// </summary>
+        /// <exception cref="AnyShareSDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userGetbasicinfoReq"></param>
+        /// <returns>ApiResponse of UserGetbasicinfoRes</returns>
+        public ApiResponse<UserGetbasicinfoRes> UserGetbasicinfoPostWithHttpInfo (UserGetbasicinfoReq userGetbasicinfoReq)
+        {
+            // verify the required parameter 'userGetbasicinfoReq' is set
+            if (userGetbasicinfoReq == null)
+                throw new ApiException(400, "Missing required parameter 'userGetbasicinfoReq' when calling DefaultApi->UserGetbasicinfoPost");
+
+            var localVarPath = "/user/getbasicinfo";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (userGetbasicinfoReq != null && userGetbasicinfoReq.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(userGetbasicinfoReq); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = userGetbasicinfoReq; // byte array
+            }
+
+            // authentication (bearerAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("UserGetbasicinfoPost", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<UserGetbasicinfoRes>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (UserGetbasicinfoRes) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserGetbasicinfoRes)));
+        }
+
+        /// <summary>
+        /// 获取用户基本信息 
+        /// </summary>
+        /// <exception cref="AnyShareSDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userGetbasicinfoReq"></param>
+        /// <returns>Task of UserGetbasicinfoRes</returns>
+        public async System.Threading.Tasks.Task<UserGetbasicinfoRes> UserGetbasicinfoPostAsync (UserGetbasicinfoReq userGetbasicinfoReq)
+        {
+             ApiResponse<UserGetbasicinfoRes> localVarResponse = await UserGetbasicinfoPostAsyncWithHttpInfo(userGetbasicinfoReq);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// 获取用户基本信息 
+        /// </summary>
+        /// <exception cref="AnyShareSDK.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userGetbasicinfoReq"></param>
+        /// <returns>Task of ApiResponse (UserGetbasicinfoRes)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<UserGetbasicinfoRes>> UserGetbasicinfoPostAsyncWithHttpInfo (UserGetbasicinfoReq userGetbasicinfoReq)
+        {
+            // verify the required parameter 'userGetbasicinfoReq' is set
+            if (userGetbasicinfoReq == null)
+                throw new ApiException(400, "Missing required parameter 'userGetbasicinfoReq' when calling DefaultApi->UserGetbasicinfoPost");
+
+            var localVarPath = "/user/getbasicinfo";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (userGetbasicinfoReq != null && userGetbasicinfoReq.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(userGetbasicinfoReq); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = userGetbasicinfoReq; // byte array
+            }
+
+            // authentication (bearerAuth) required
+            // oauth required
+            if (!String.IsNullOrEmpty(this.Configuration.AccessToken))
+            {
+                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("UserGetbasicinfoPost", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<UserGetbasicinfoRes>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
+                (UserGetbasicinfoRes) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserGetbasicinfoRes)));
+        }
+
     }
 }

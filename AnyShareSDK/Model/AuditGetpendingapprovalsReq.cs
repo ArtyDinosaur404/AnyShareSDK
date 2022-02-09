@@ -1,5 +1,5 @@
 /* 
- * OpenDoc_API-文档访问
+ * 6.0-OpenDoc_API-文档访问
  *
  * API to access AnyShare    如有任何疑问，可到开发者社区提问：https://developers.aishu.cn  # Authentication  - 调用需要鉴权的API，必须将token放在HTTP header中：\"Authorization: Bearer ACCESS_TOKEN\"  - 对于GET请求，除了将token放在HTTP header中，也可以将token放在URL query string中：\"tokenid=ACCESS_TOKEN\"  
  *
@@ -33,12 +33,35 @@ namespace AnyShareSDK.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AuditGetpendingapprovalsReq" /> class.
         /// </summary>
-        /// <param name="type">用于标识具体获取哪种申请，默认为0  0 表示获取共享申请和定密申请  1 表示获取共享申请(包括共享、外链、所有者和更改继承申请)  2 表示获取定密申请.</param>
-        public AuditGetpendingapprovalsReq(long? type = default(long?))
+        [JsonConstructorAttribute]
+        protected AuditGetpendingapprovalsReq() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AuditGetpendingapprovalsReq" /> class.
+        /// </summary>
+        /// <param name="start">分页开始号，从0开始 (required).</param>
+        /// <param name="limit">条数，表示取多少条记录，-1表示不限制 (required).</param>
+        /// <param name="type">用于标识具体获取哪种申请，默认为0  0 表示获取共享申请和定密申请  1 表示获取共享申请(包括共享、外链、所有者和更改继承申请)  2 表示获取定密申请 (required).</param>
+        public AuditGetpendingapprovalsReq(long? start = default(long?), long? limit = default(long?), long? type = default(long?))
         {
+            this.Start = start;
+            this.Limit = limit;
             this.Type = type;
         }
         
+        /// <summary>
+        /// 分页开始号，从0开始
+        /// </summary>
+        /// <value>分页开始号，从0开始</value>
+        [DataMember(Name="start", EmitDefaultValue=false)]
+        public long? Start { get; set; }
+
+        /// <summary>
+        /// 条数，表示取多少条记录，-1表示不限制
+        /// </summary>
+        /// <value>条数，表示取多少条记录，-1表示不限制</value>
+        [DataMember(Name="limit", EmitDefaultValue=false)]
+        public long? Limit { get; set; }
+
         /// <summary>
         /// 用于标识具体获取哪种申请，默认为0  0 表示获取共享申请和定密申请  1 表示获取共享申请(包括共享、外链、所有者和更改继承申请)  2 表示获取定密申请
         /// </summary>
@@ -54,6 +77,8 @@ namespace AnyShareSDK.Model
         {
             var sb = new StringBuilder();
             sb.Append("class AuditGetpendingapprovalsReq {\n");
+            sb.Append("  Start: ").Append(Start).Append("\n");
+            sb.Append("  Limit: ").Append(Limit).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -90,6 +115,16 @@ namespace AnyShareSDK.Model
 
             return 
                 (
+                    this.Start == input.Start ||
+                    (this.Start != null &&
+                    this.Start.Equals(input.Start))
+                ) && 
+                (
+                    this.Limit == input.Limit ||
+                    (this.Limit != null &&
+                    this.Limit.Equals(input.Limit))
+                ) && 
+                (
                     this.Type == input.Type ||
                     (this.Type != null &&
                     this.Type.Equals(input.Type))
@@ -105,6 +140,10 @@ namespace AnyShareSDK.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.Start != null)
+                    hashCode = hashCode * 59 + this.Start.GetHashCode();
+                if (this.Limit != null)
+                    hashCode = hashCode * 59 + this.Limit.GetHashCode();
                 if (this.Type != null)
                     hashCode = hashCode * 59 + this.Type.GetHashCode();
                 return hashCode;

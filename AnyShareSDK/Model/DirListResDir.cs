@@ -1,5 +1,5 @@
 /* 
- * OpenDoc_API-文档访问
+ * 6.0-OpenDoc_API-文档访问
  *
  * API to access AnyShare    如有任何疑问，可到开发者社区提问：https://developers.aishu.cn  # Authentication  - 调用需要鉴权的API，必须将token放在HTTP header中：\"Authorization: Bearer ACCESS_TOKEN\"  - 对于GET请求，除了将token放在HTTP header中，也可以将token放在URL query string中：\"tokenid=ACCESS_TOKEN\"  
  *
@@ -49,7 +49,8 @@ namespace AnyShareSDK.Model
         /// <param name="clientMtime">如果是文件，返回由客户端设置的文件本地修改时间    若未设置，返回modified的值  .</param>
         /// <param name="csflevel">文件密级  - 0：默认值，创建文件时文件密级设为创建者密级，覆盖版本时不改变密级  - 5~15：正常密级  - 0x7FFF：空密级   (required).</param>
         /// <param name="attr">总共32位，右下角表示最低位，左上角表示最高位，如：    0&lt;sub&gt;32&lt;/sub&gt;000,0000,0000,0000&lt;sub&gt;17&lt;/sub&gt;    0&lt;sub&gt;16&lt;/sub&gt;000,0000,0000,0000&lt;sub&gt;1&lt;/sub&gt;  - 1：只读（用户针对访问对象是否是只读属性）  - 2：锁定（表示访问对象是否被锁定）  - 3：允许显示  - 4：拒绝显示  - 5：允许预览  - 6：拒绝预览  - 7：允许下载  - 8：拒绝下载  - 9：允许新建  - 10：拒绝新建  - 11：允许修改  - 12：拒绝修改  - 13：允许删除  - 14：拒绝删除  - 15：允许复制  - 16：拒绝复制     第25位到28位表示该用户的密级    可能为以下值：    0101(5)~1111(15)    attr中带上用户的密级是方便客户端探测到用户的密级变化，从而探测到新的文件（因为密级变大或者变小，看到的文件会变多或变少）  .</param>
-        public DirListResDir(string docid = default(string), string name = default(string), string rev = default(string), long? size = default(long?), long? createTime = default(long?), string creator = default(string), long? modified = default(long?), string editor = default(string), long? clientMtime = default(long?), long? csflevel = default(long?), long? attr = default(long?))
+        /// <param name="duedate">文件到期提醒时间 (required).</param>
+        public DirListResDir(string docid = default(string), string name = default(string), string rev = default(string), long? size = default(long?), long? createTime = default(long?), string creator = default(string), long? modified = default(long?), string editor = default(string), long? clientMtime = default(long?), long? csflevel = default(long?), long? attr = default(long?), long? duedate = default(long?))
         {
             this.Docid = docid;
             this.Name = name;
@@ -60,6 +61,7 @@ namespace AnyShareSDK.Model
             this.Modified = modified;
             this.Editor = editor;
             this.Csflevel = csflevel;
+            this.Duedate = duedate;
             this.ClientMtime = clientMtime;
             this.Attr = attr;
         }
@@ -142,6 +144,13 @@ namespace AnyShareSDK.Model
         public long? Attr { get; set; }
 
         /// <summary>
+        /// 文件到期提醒时间
+        /// </summary>
+        /// <value>文件到期提醒时间</value>
+        [DataMember(Name="duedate", EmitDefaultValue=false)]
+        public long? Duedate { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -160,6 +169,7 @@ namespace AnyShareSDK.Model
             sb.Append("  ClientMtime: ").Append(ClientMtime).Append("\n");
             sb.Append("  Csflevel: ").Append(Csflevel).Append("\n");
             sb.Append("  Attr: ").Append(Attr).Append("\n");
+            sb.Append("  Duedate: ").Append(Duedate).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -248,6 +258,11 @@ namespace AnyShareSDK.Model
                     this.Attr == input.Attr ||
                     (this.Attr != null &&
                     this.Attr.Equals(input.Attr))
+                ) && 
+                (
+                    this.Duedate == input.Duedate ||
+                    (this.Duedate != null &&
+                    this.Duedate.Equals(input.Duedate))
                 );
         }
 
@@ -282,6 +297,8 @@ namespace AnyShareSDK.Model
                     hashCode = hashCode * 59 + this.Csflevel.GetHashCode();
                 if (this.Attr != null)
                     hashCode = hashCode * 59 + this.Attr.GetHashCode();
+                if (this.Duedate != null)
+                    hashCode = hashCode * 59 + this.Duedate.GetHashCode();
                 return hashCode;
             }
         }

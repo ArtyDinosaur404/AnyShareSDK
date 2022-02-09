@@ -1,5 +1,5 @@
 /* 
- * OpenDoc_API-文档访问
+ * 6.0-OpenDoc_API-文档访问
  *
  * API to access AnyShare    如有任何疑问，可到开发者社区提问：https://developers.aishu.cn  # Authentication  - 调用需要鉴权的API，必须将token放在HTTP header中：\"Authorization: Bearer ACCESS_TOKEN\"  - 对于GET请求，除了将token放在HTTP header中，也可以将token放在URL query string中：\"tokenid=ACCESS_TOKEN\"  
  *
@@ -39,9 +39,11 @@ namespace AnyShareSDK.Model
         /// Initializes a new instance of the <see cref="DirCheckwatermarkRes" /> class.
         /// </summary>
         /// <param name="watermarktype">水印类型(0:无水印，1：预览水印，2:下载水印，3：预览下载水印) (required).</param>
-        public DirCheckwatermarkRes(long? watermarktype = default(long?))
+        /// <param name="watermarkconfig">水印配置信息 (required).</param>
+        public DirCheckwatermarkRes(long? watermarktype = default(long?), string watermarkconfig = default(string))
         {
             this.Watermarktype = watermarktype;
+            this.Watermarkconfig = watermarkconfig;
         }
         
         /// <summary>
@@ -52,6 +54,13 @@ namespace AnyShareSDK.Model
         public long? Watermarktype { get; set; }
 
         /// <summary>
+        /// 水印配置信息
+        /// </summary>
+        /// <value>水印配置信息</value>
+        [DataMember(Name="watermarkconfig", EmitDefaultValue=false)]
+        public string Watermarkconfig { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -60,6 +69,7 @@ namespace AnyShareSDK.Model
             var sb = new StringBuilder();
             sb.Append("class DirCheckwatermarkRes {\n");
             sb.Append("  Watermarktype: ").Append(Watermarktype).Append("\n");
+            sb.Append("  Watermarkconfig: ").Append(Watermarkconfig).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -98,6 +108,11 @@ namespace AnyShareSDK.Model
                     this.Watermarktype == input.Watermarktype ||
                     (this.Watermarktype != null &&
                     this.Watermarktype.Equals(input.Watermarktype))
+                ) && 
+                (
+                    this.Watermarkconfig == input.Watermarkconfig ||
+                    (this.Watermarkconfig != null &&
+                    this.Watermarkconfig.Equals(input.Watermarkconfig))
                 );
         }
 
@@ -112,6 +127,8 @@ namespace AnyShareSDK.Model
                 int hashCode = 41;
                 if (this.Watermarktype != null)
                     hashCode = hashCode * 59 + this.Watermarktype.GetHashCode();
+                if (this.Watermarkconfig != null)
+                    hashCode = hashCode * 59 + this.Watermarkconfig.GetHashCode();
                 return hashCode;
             }
         }

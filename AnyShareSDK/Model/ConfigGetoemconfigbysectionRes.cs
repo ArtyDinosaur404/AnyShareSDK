@@ -1,5 +1,5 @@
 /* 
- * OpenDoc_API-文档访问
+ * 6.0-OpenDoc_API-文档访问
  *
  * API to access AnyShare    如有任何疑问，可到开发者社区提问：https://developers.aishu.cn  # Authentication  - 调用需要鉴权的API，必须将token放在HTTP header中：\"Authorization: Bearer ACCESS_TOKEN\"  - 对于GET请求，除了将token放在HTTP header中，也可以将token放在URL query string中：\"tokenid=ACCESS_TOKEN\"  
  *
@@ -33,34 +33,29 @@ namespace AnyShareSDK.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ConfigGetoemconfigbysectionRes" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected ConfigGetoemconfigbysectionRes() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ConfigGetoemconfigbysectionRes" /> class.
-        /// </summary>
-        /// <param name="backgroundPng">OEM图片资源 (required).</param>
-        /// <param name="faviconIco">OEM图片资源 (required).</param>
-        /// <param name="logoPng">OEM图片资源 (required).</param>
-        /// <param name="orgPng">OEM图片资源 (required).</param>
-        /// <param name="helper">帮助文档链接地址 (required).</param>
-        /// <param name="organization">组织机构 (required).</param>
-        /// <param name="product">产品名称 (required).</param>
-        /// <param name="site">官方链接 (required).</param>
-        /// <param name="userAgreement">是否开启用户许可协议 (required).</param>
-        /// <param name="agreementText">用户许可协议 (required).</param>
-        /// <param name="android">开放android客户端下载 (required).</param>
-        /// <param name="ios">开放iOS客户端下载 (required).</param>
-        /// <param name="office">开放office插件下载 (required).</param>
-        /// <param name="mac">开放mac客户端下载 (required).</param>
-        /// <param name="windows">开放windows客户端下载 (required).</param>
-        /// <param name="allowCn">允许简体中文 (required).</param>
-        /// <param name="allowTw">允许繁体中文 (required).</param>
-        /// <param name="allowEn">允许英文语言 (required).</param>
-        /// <param name="theme">基本颜色值 (required).</param>
-        /// <param name="showProduct">显示产品信息 (required).</param>
-        /// <param name="showHardware">显示型号信息 (required).</param>
-        /// <param name="showLicense">显示授权信息 (required).</param>
-        /// <param name="showCopyright">显示版权信息 (required).</param>
+        /// <param name="backgroundPng">OEM图片资源.</param>
+        /// <param name="faviconIco">OEM图片资源.</param>
+        /// <param name="logoPng">OEM图片资源.</param>
+        /// <param name="orgPng">OEM图片资源.</param>
+        /// <param name="helper">帮助文档链接地址.</param>
+        /// <param name="organization">组织机构.</param>
+        /// <param name="product">产品名称.</param>
+        /// <param name="site">官方链接.</param>
+        /// <param name="userAgreement">是否开启用户许可协议.</param>
+        /// <param name="agreementText">用户许可协议.</param>
+        /// <param name="android">开放android客户端下载.</param>
+        /// <param name="ios">开放iOS客户端下载.</param>
+        /// <param name="office">开放office插件下载.</param>
+        /// <param name="mac">开放mac客户端下载.</param>
+        /// <param name="windows">开放windows客户端下载.</param>
+        /// <param name="allowCn">允许简体中文.</param>
+        /// <param name="allowTw">允许繁体中文.</param>
+        /// <param name="allowEn">允许英文语言.</param>
+        /// <param name="theme">基本颜色值.</param>
+        /// <param name="showProduct">显示产品信息.</param>
+        /// <param name="showHardware">显示型号信息.</param>
+        /// <param name="showLicense">显示授权信息.</param>
+        /// <param name="showCopyright">显示版权信息.</param>
         public ConfigGetoemconfigbysectionRes(string backgroundPng = default(string), string faviconIco = default(string), string logoPng = default(string), string orgPng = default(string), string helper = default(string), string organization = default(string), string product = default(string), string site = default(string), string userAgreement = default(string), string agreementText = default(string), string android = default(string), string ios = default(string), string office = default(string), string mac = default(string), string windows = default(string), string allowCn = default(string), string allowTw = default(string), string allowEn = default(string), string theme = default(string), string showProduct = default(string), string showHardware = default(string), string showLicense = default(string), string showCopyright = default(string))
         {
             this.BackgroundPng = backgroundPng;
