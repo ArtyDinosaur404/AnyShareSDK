@@ -47,7 +47,7 @@ namespace AnyShareSDK.Model
         /// <param name="usrloginname">用户登录名 (required).</param>
         /// <param name="clientMtime">客户端设置的文件本地修改时间 (required).</param>
         /// <param name="docid">文档ID (required).</param>
-        public LinkGetRes(string name = default(string), long? size = default(long?), long? modified = default(long?), long? perm = default(long?), long? endtime = default(long?), string usrdisplayname = default(string), string usrloginname = default(string), int? clientMtime = default(int?), string docid = default(string))
+        public LinkGetRes(string name = default(string), long? size = default(long?), long? modified = default(long?), long? perm = default(long?), long? endtime = default(long?), string usrdisplayname = default(string), string usrloginname = default(string), long? clientMtime = default(long?), string docid = default(string))
         {
             this.Name = name;
             this.Size = size;
@@ -114,7 +114,7 @@ namespace AnyShareSDK.Model
         /// </summary>
         /// <value>客户端设置的文件本地修改时间</value>
         [DataMember(Name="client_mtime", EmitDefaultValue=false)]
-        public int? ClientMtime { get; set; }
+        public long? ClientMtime { get; set; }
 
         /// <summary>
         /// 文档ID
